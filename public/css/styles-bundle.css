@@ -908,3 +908,109 @@ XIX. ADS
     margin: 2.4rem 0;
     padding: 2.4rem 0; } }
 
+/**************
+MISC TEMPLATE EDITS
+**************/
+/**************
+TOP NAV
+**************/
+#top-nav-wrapper .active {
+  background: #e34e36; }
+  #top-nav-wrapper .active h1 {
+    color: white; }
+
+.top-nav {
+  height: 100px;
+  background-color: #0d4974;
+  border-right: 3px #323232 solid;
+  cursor: pointer; }
+  .top-nav:hover {
+    background: #1266a2;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s; }
+  .top-nav h1 {
+    font-family: "Kanit";
+    font-weight: 800;
+    font-size: auto;
+    color: #c9c9c9;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -ms-transform: translateY(-50%);
+    /* IE 9 */
+    -webkit-transform: translateY(-50%);
+    /* Chrome, Safari, Opera */
+    transform: translateY(-50%); }
+  @media only screen and (max-width: 678px) {
+    .top-nav {
+      border-bottom: 3px #323232 solid; } }
+
+@media only screen and (max-width: 678px) {
+  #top-nav-2 {
+    border-right: none; } }
+
+#top-nav-4 {
+  border-right: none; }
+
+/**************
+BOTTOM NAV
+**************/
+#bottom-nav-wrapper {
+  margin-top: 60px; }
+
+.bottom-nav {
+  height: 400px;
+  background-color: #323232;
+  border-right: 2px white solid;
+  cursor: pointer; }
+  .bottom-nav:hover {
+    background: #1266a2; }
+  .bottom-nav h1 {
+    font-family: "Kanit";
+    font-weight: 100;
+    font-size: auto;
+    color: #c9c9c9;
+    text-transform: auto;
+    font-style: italic;
+    padding: 60px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -ms-transform: translateY(-50%);
+    /* IE 9 */
+    -webkit-transform: translateY(-50%);
+    /* Chrome, Safari, Opera */
+    transform: translateY(-50%); }
+  .bottom-nav h2 {
+    font-family: "Kanit";
+    font-weight: 800;
+    font-size: auto;
+    color: #c9c9c9;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    padding: 60px;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -ms-transform: translateY(-50%);
+    /* IE 9 */
+    -webkit-transform: translateY(-50%);
+    /* Chrome, Safari, Opera */
+    transform: translateY(-50%); }
+  @media only screen and (max-width: 678px) {
+    .bottom-nav {
+      border-bottom: 2px white solid; } }
+
+@media only screen and (max-width: 678px) {
+  #bottom-nav-2 {
+    border-right: none; } }

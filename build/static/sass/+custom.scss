@@ -1,11 +1,153 @@
-//  _____           _                    _____ _         _           
-// /  __ \         | |                  /  ___| |       | |          
-// | /  \/_   _ ___| |_ ___  _ __ ___   \ `--.| |_ _   _| | ___  ___ 
+//  _____           _                    _____ _         _
+// /  __ \         | |                  /  ___| |       | |
+// | /  \/_   _ ___| |_ ___  _ __ ___   \ `--.| |_ _   _| | ___  ___
 // | |   | | | / __| __/ _ \| '_ ` _ \   `--. \ __| | | | |/ _ \/ __|
 // | \__/\ |_| \__ \ || (_) | | | | | | /\__/ / |_| |_| | |  __/\__ \
 //  \____/\__,_|___/\__\___/|_| |_| |_| \____/ \__|\__, |_|\___||___/
-//                                                  __/ |            
-//                                                 |___/             
+//                                                  __/ |
+//                                                 |___/
 
 @import 'variables';
 @import 'mixins';
+
+$primary: $chartRed;
+$secondary: $chartBlue;
+$secondary-dark: darken($secondary, 20%);
+$secondary-darker: darken($secondary, 30%);
+
+$tertiary: $chartYellow;
+
+$normal: #323232;
+$light: $chartGray;
+
+@mixin headline($font, $weight, $size, $color, $transform) {
+  font-family: $font;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  text-transform: $transform;
+}
+
+.transition {
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+}
+
+
+/**************
+MISC TEMPLATE EDITS
+**************/
+
+
+/**************
+TOP NAV
+**************/
+
+#top-nav-wrapper {
+	.active {
+		background: $primary;
+
+		h1 {
+			color: white;
+		}
+	}
+}
+
+.top-nav {
+	height: 100px;
+	background-color: $secondary-darker;
+	border-right: 3px $normal solid;
+	cursor: pointer;
+
+	&:hover {
+		background: $secondary-dark;
+		@extend transition;
+	}
+
+	h1 {
+		@include headline("Kanit", 800, auto, $light, uppercase);
+		letter-spacing: 0.1rem;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		text-align: center;
+		-ms-transform: translateY(-50%); /* IE 9 */
+	    -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+	    transform: translateY(-50%);
+	}
+
+	@media only screen and (max-width: 678px) {
+		border-bottom: 3px $normal solid;
+	}
+}
+
+#top-nav-2 {
+	@media only screen and (max-width: 678px) {
+		border-right: none;
+	}
+}
+
+#top-nav-4 {
+	border-right: none;
+}
+
+
+/**************
+BOTTOM NAV
+**************/
+
+#bottom-nav-wrapper {
+	margin-top: 60px;
+}
+
+.bottom-nav {
+	height: 400px;
+	background-color: $normal;
+	border-right: 2px white solid;
+	cursor: pointer;
+
+	&:hover {
+		@extend transition;
+	}
+
+	h1 {
+		@include headline("Kanit", 100, auto, $light, auto);
+		font-style: italic;
+		padding: 60px;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		text-align: center;
+		-ms-transform: translateY(-50%); /* IE 9 */
+	    -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+	    transform: translateY(-50%);
+	}
+
+	h2 {
+		@include headline("Kanit", 800, auto, $light, uppercase);
+		letter-spacing: 0.2rem;
+		padding: 60px;
+		position: absolute;
+		top: 30%;
+		left: 0;
+		right: 0;
+		text-align: center;
+		-ms-transform: translateY(-50%); /* IE 9 */
+		-webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+		transform: translateY(-50%);
+	}
+
+	@media only screen and (max-width: 678px) {
+		border-bottom: 2px white solid;
+	}
+}
+
+#bottom-nav-2 {
+	@media only screen and (max-width: 678px) {
+		border-right: none;
+	}
+}
