@@ -20,6 +20,8 @@ $tertiary: $chartYellow;
 $normal: #323232;
 $light: $chartGray;
 
+$nav-buttons: nav1 nav2 nav3;
+
 @mixin headline($font, $weight, $size, $color, $transform) {
   font-family: $font;
   font-weight: $weight;
@@ -41,13 +43,16 @@ MISC TEMPLATE EDITS
 **************/
 
 
+
 /**************
 TOP NAV
 **************/
 
 #top-nav-wrapper {
+	display: none;
 	.active {
 		background: $primary;
+		@extend .transition;
 
 		h1 {
 			color: white;
@@ -58,12 +63,14 @@ TOP NAV
 .top-nav {
 	height: 100px;
 	background-color: $secondary-darker;
-	border-right: 3px $normal solid;
 	cursor: pointer;
 
 	&:hover {
 		background: $secondary-dark;
-		@extend transition;
+		@extend .transition;
+		h1 {
+			color: white;
+		}
 	}
 
 	h1 {
@@ -77,21 +84,38 @@ TOP NAV
 		-ms-transform: translateY(-50%); /* IE 9 */
 	    -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
 	    transform: translateY(-50%);
-	}
 
-	@media only screen and (max-width: 678px) {
-		border-bottom: 3px $normal solid;
-	}
-}
-
-#top-nav-2 {
-	@media only screen and (max-width: 678px) {
-		border-right: none;
+		@media only screen and (max-width: 678px) {
+			font-size: 2.5rem;
+			line-height: 2.1rem;
+		}
 	}
 }
 
-#top-nav-4 {
-	border-right: none;
+
+/**************
+HEADER AND DECK
+**************/
+
+#story-head {
+	h1 {
+		@include headline("Kanit", 800, auto, $primary, uppercase);
+		letter-spacing: 0.02rem;
+		line-height: 6rem;
+	}
+	h2 {
+		@include headline("Kanit", 300, auto, auto, auto);
+		font-style: italic;
+	}
+}
+
+.byline-block {
+	@include headline("Kanit", 300, auto, auto, auto);
+	font-style: italic;
+}
+
+.dropcap {
+	@include headline("Kanit", 300, auto, $secondary-dark, uppercase);
 }
 
 
@@ -101,53 +125,68 @@ BOTTOM NAV
 
 #bottom-nav-wrapper {
 	margin-top: 60px;
+	display: none;
 }
 
 .bottom-nav {
 	height: 400px;
-	background-color: $normal;
-	border-right: 2px white solid;
+	background: $secondary-darker;
 	cursor: pointer;
 
 	&:hover {
-		@extend transition;
+		background: $secondary-darker !important;
+		@extend .transition;
+		h2 {
+			color: white;
+		}
 	}
 
 	h1 {
-		@include headline("Kanit", 100, auto, $light, auto);
+		@include headline("Kanit", 100, auto, white, auto);
 		font-style: italic;
 		padding: 60px;
 		position: absolute;
-		top: 50%;
+		top: 55%;
 		left: 0;
 		right: 0;
 		text-align: center;
 		-ms-transform: translateY(-50%); /* IE 9 */
 	    -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
 	    transform: translateY(-50%);
+
+		@media only screen and (max-width: 678px) {
+			padding: 20px;
+		}
 	}
 
 	h2 {
-		@include headline("Kanit", 800, auto, $light, uppercase);
+		@include headline("Kanit", 800, auto, white, uppercase);
 		letter-spacing: 0.2rem;
 		padding: 60px;
 		position: absolute;
-		top: 30%;
+		top: 35%;
 		left: 0;
 		right: 0;
 		text-align: center;
 		-ms-transform: translateY(-50%); /* IE 9 */
 		-webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
 		transform: translateY(-50%);
+
+		@media only screen and (max-width: 678px) {
+			top: 25%;
+		}
 	}
 
 	@media only screen and (max-width: 678px) {
-		border-bottom: 2px white solid;
+		height: 200px;
 	}
 }
 
-#bottom-nav-2 {
-	@media only screen and (max-width: 678px) {
-		border-right: none;
+@each $nav-button in $nav-buttons {
+	#bottom-#{$nav-button} {
+		background-image:
+			linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
+			url("../images/_bottom-#{$nav-button}.jpg");
+		background-size: cover;
 	}
 }

@@ -908,28 +908,33 @@ XIX. ADS
     margin: 2.4rem 0;
     padding: 2.4rem 0; } }
 
+.transition, #top-nav-wrapper .active, .top-nav:hover, .bottom-nav:hover {
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s; }
+
 /**************
 MISC TEMPLATE EDITS
 **************/
 /**************
 TOP NAV
 **************/
-#top-nav-wrapper .active {
-  background: #e34e36; }
-  #top-nav-wrapper .active h1 {
-    color: white; }
+#top-nav-wrapper {
+  display: none; }
+  #top-nav-wrapper .active {
+    background: #e34e36; }
+    #top-nav-wrapper .active h1 {
+      color: white; }
 
 .top-nav {
   height: 100px;
   background-color: #0d4974;
-  border-right: 3px #323232 solid;
   cursor: pointer; }
   .top-nav:hover {
-    background: #1266a2;
-    -o-transition: .5s;
-    -ms-transition: .5s;
-    -moz-transition: .5s;
-    -webkit-transition: .5s; }
+    background: #1266a2; }
+    .top-nav:hover h1 {
+      color: white; }
   .top-nav h1 {
     font-family: "Kanit";
     font-weight: 800;
@@ -947,40 +952,71 @@ TOP NAV
     -webkit-transform: translateY(-50%);
     /* Chrome, Safari, Opera */
     transform: translateY(-50%); }
-  @media only screen and (max-width: 678px) {
-    .top-nav {
-      border-bottom: 3px #323232 solid; } }
+    @media only screen and (max-width: 678px) {
+      .top-nav h1 {
+        font-size: 2.5rem;
+        line-height: 2.1rem; } }
 
-@media only screen and (max-width: 678px) {
-  #top-nav-2 {
-    border-right: none; } }
+/**************
+HEADER AND DECK
+**************/
+#story-head h1 {
+  font-family: "Kanit";
+  font-weight: 800;
+  font-size: auto;
+  color: #e34e36;
+  text-transform: uppercase;
+  letter-spacing: 0.02rem;
+  line-height: 6rem; }
 
-#top-nav-4 {
-  border-right: none; }
+#story-head h2 {
+  font-family: "Kanit";
+  font-weight: 300;
+  font-size: auto;
+  color: auto;
+  text-transform: auto;
+  font-style: italic; }
+
+.byline-block {
+  font-family: "Kanit";
+  font-weight: 300;
+  font-size: auto;
+  color: auto;
+  text-transform: auto;
+  font-style: italic; }
+
+.dropcap {
+  font-family: "Kanit";
+  font-weight: 300;
+  font-size: auto;
+  color: #1266a2;
+  text-transform: uppercase; }
 
 /**************
 BOTTOM NAV
 **************/
 #bottom-nav-wrapper {
-  margin-top: 60px; }
+  margin-top: 60px;
+  display: none; }
 
 .bottom-nav {
   height: 400px;
-  background-color: #323232;
-  border-right: 2px white solid;
+  background: #0d4974;
   cursor: pointer; }
   .bottom-nav:hover {
-    background: #1266a2; }
+    background: #0d4974 !important; }
+    .bottom-nav:hover h2 {
+      color: white; }
   .bottom-nav h1 {
     font-family: "Kanit";
     font-weight: 100;
     font-size: auto;
-    color: #c9c9c9;
+    color: white;
     text-transform: auto;
     font-style: italic;
     padding: 60px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0;
     right: 0;
     text-align: center;
@@ -989,16 +1025,19 @@ BOTTOM NAV
     -webkit-transform: translateY(-50%);
     /* Chrome, Safari, Opera */
     transform: translateY(-50%); }
+    @media only screen and (max-width: 678px) {
+      .bottom-nav h1 {
+        padding: 20px; } }
   .bottom-nav h2 {
     font-family: "Kanit";
     font-weight: 800;
     font-size: auto;
-    color: #c9c9c9;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     padding: 60px;
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 0;
     right: 0;
     text-align: center;
@@ -1007,10 +1046,21 @@ BOTTOM NAV
     -webkit-transform: translateY(-50%);
     /* Chrome, Safari, Opera */
     transform: translateY(-50%); }
+    @media only screen and (max-width: 678px) {
+      .bottom-nav h2 {
+        top: 25%; } }
   @media only screen and (max-width: 678px) {
     .bottom-nav {
-      border-bottom: 2px white solid; } }
+      height: 200px; } }
 
-@media only screen and (max-width: 678px) {
-  #bottom-nav-2 {
-    border-right: none; } }
+#bottom-nav1 {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav1.jpg");
+  background-size: cover; }
+
+#bottom-nav2 {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav2.jpg");
+  background-size: cover; }
+
+#bottom-nav3 {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav3.jpg");
+  background-size: cover; }
