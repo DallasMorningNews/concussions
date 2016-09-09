@@ -54,46 +54,145 @@ MISC TEMPLATE EDITS
 TOP NAV
 **************/
 
-#top-nav-wrapper {
-	display: none;
-	.active {
-		background: $primary;
-		@extend .transition;
 
-		h1 {
-			color: white;
-		}
-	}
+#top-nav-wrapper {
+    display: none;
+    width: 100%;
+    height: 100px;
+    // position: absolute;
+    // bottom: 0;
+    background: #fff;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: none;
+
+    .face {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        -webkit-transform: rotateX(0deg) translateZ(50px);
+        transform: rotateX(0deg) translateZ(50px);
+        -webkit-transition: box-shadow .5s ease-in-out;
+        transition: box-shadow .5s ease-in-out;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        z-index: 2;
+        // background: $primary;
+
+    	h1 {
+    		@include headline("Kanit", 800, auto, $light, uppercase);
+    		letter-spacing: 0.1rem;
+    		position: absolute;
+    		top: 50%;
+    		left: 0;
+    		right: 0;
+    		text-align: center;
+            @extend .transform;
+
+    		@media only screen and (max-width: 678px) {
+    			font-size: 2.5rem;
+    			line-height: 2.1rem;
+    		}
+    	}
+        h2 {
+            @include headline("Kanit", 100, auto, white, auto);
+            font-style: italic;
+            padding: 60px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            @extend .transform;
+
+            @media only screen and (max-width: 678px) {
+                padding: 20px;
+            }
+        }
+
+        &.hover {
+            box-shadow: inset 0px -30px 100px rgba(0,0,0,0.2);
+            -webkit-transform: rotateX(90deg) translateZ(50px);
+            transform: rotateX(90deg) translateZ(50px);
+            overflow: hidden;
+
+            .nav-hed2 {
+                @extend .nav-hed;
+                background-color: $tertiary;
+            }
+            .nav-hed3 {
+                @extend .nav-hed;
+                background: $tertiary;
+            }
+            .nav-hed4 {
+                @extend .nav-hed;
+                background: $tertiary;
+            }
+        }
+    }
+    .active {
+        background: $primary;
+        @extend .transition;
+
+        h1 {
+            color: white;
+        }
+    }
+}
+
+.nav-hed {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+
+.trigger-top {
+    width: calc(100% / 4);
+    float: left;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    @media only screen and (max-width: 678px) {
+        width: 100%;
+    }
+}
+
+.trigger-top:hover .feature, .stick .feature {
+    -webkit-transform: rotateX(-90deg) translateZ(0);
+    transform: rotateX(-90deg) translateZ(0);
+    bottom: 10px;
+}
+
+.feature {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform .4s ease-in-out, opacity 1.5s ease-in-out;
+    -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
+    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateX(0deg) translateZ(0);
+    transform: rotateX(0deg) translateZ(0);
 }
 
 .top-nav {
-	height: 100px;
-	background-color: $secondary-darker;
-	cursor: pointer;
-
-	&:hover {
-		background: $secondary-dark;
-		@extend .transition;
-		h1 {
-			color: white;
-		}
-	}
-
-	h1 {
-		@include headline("Kanit", 800, auto, $light, uppercase);
-		letter-spacing: 0.1rem;
-		position: absolute;
-		top: 50%;
-		left: 0;
-		right: 0;
-		text-align: center;
-        @extend .transform;
-
-		@media only screen and (max-width: 678px) {
-			font-size: 2.5rem;
-			line-height: 2.1rem;
-		}
-	}
+    background: $secondary-darker;
 }
 
 
@@ -166,60 +265,60 @@ STORY CONTENT
 BOTTOM NAV
 **************/
 
-#bottom-nav-wrapper {
-	margin-top: 60px;
-	display: none;
-}
-
-.bottom-nav {
-	height: 400px;
-	background: $secondary-darker;
-	cursor: pointer;
-
-	&:hover {
-		background: $secondary-darker !important;
-		@extend .transition;
-		h2 {
-			color: white;
-		}
-	}
-
-	h1 {
-		@include headline("Kanit", 100, auto, white, auto);
-		font-style: italic;
-		padding: 60px;
-		position: absolute;
-		top: 55%;
-		left: 0;
-		right: 0;
-		text-align: center;
-        @extend .transform;
-
-		@media only screen and (max-width: 678px) {
-			padding: 20px;
-		}
-	}
-
-	h2 {
-		@include headline("Kanit", 800, auto, white, uppercase);
-		letter-spacing: 0.2rem;
-		padding: 60px;
-		position: absolute;
-		top: 35%;
-		left: 0;
-		right: 0;
-		text-align: center;
-        @extend .transform;
-
-		@media only screen and (max-width: 678px) {
-			top: 25%;
-		}
-	}
-
-	@media only screen and (max-width: 678px) {
-		height: 200px;
-	}
-}
+// #bottom-nav-wrapper {
+// 	margin-top: 60px;
+// 	display: none;
+// }
+//
+// .bottom-nav {
+// 	height: 400px;
+// 	background: $secondary-darker;
+// 	cursor: pointer;
+//
+// 	&:hover {
+// 		background: $secondary-darker !important;
+// 		@extend .transition;
+// 		h2 {
+// 			color: white;
+// 		}
+// 	}
+//
+// 	h1 {
+// 		@include headline("Kanit", 100, auto, white, auto);
+// 		font-style: italic;
+// 		padding: 60px;
+// 		position: absolute;
+// 		top: 55%;
+// 		left: 0;
+// 		right: 0;
+// 		text-align: center;
+//         @extend .transform;
+//
+// 		@media only screen and (max-width: 678px) {
+// 			padding: 20px;
+// 		}
+// 	}
+//
+// 	h2 {
+// 		@include headline("Kanit", 800, auto, white, uppercase);
+// 		letter-spacing: 0.2rem;
+// 		padding: 60px;
+// 		position: absolute;
+// 		top: 35%;
+// 		left: 0;
+// 		right: 0;
+// 		text-align: center;
+//         @extend .transform;
+//
+// 		@media only screen and (max-width: 678px) {
+// 			top: 25%;
+// 		}
+// 	}
+//
+// 	@media only screen and (max-width: 678px) {
+// 		height: 200px;
+// 	}
+// }
 
 @each $nav-button in $nav-buttons {
 	#bottom-#{$nav-button} {
@@ -233,7 +332,7 @@ BOTTOM NAV
 
 
 
-#work {
+#bottom-nav-wrapper {
     width: 100%;
     height: 400px;
     // position: absolute;
@@ -244,87 +343,6 @@ BOTTOM NAV
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: none;
-}
-
-.trigger {
-    width: calc(100% / 3);
-    float: left;
-    position: relative;
-    height: 100%;
-    cursor: pointer;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.trigger:hover .feature, .stick .feature {
-    -webkit-transform: rotateX(90deg) translateZ(0);
-    transform: rotateX(90deg) translateZ(0);
-    bottom: 10px;
-}
-
-
-.feature {
-    width: 100%;
-    height: 100%;
-    -webkit-transition: -webkit-transform .4s ease-in-out, opacity 1.5s ease-in-out;
-    -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-    transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
-    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: rotateX(0deg) translateZ(0);
-    transform: rotateX(0deg) translateZ(0);
-
-    h1 {
-        @include headline("Kanit", 100, auto, white, auto);
-        font-style: italic;
-        padding: 60px;
-        position: absolute;
-        top: 55%;
-        left: 0;
-        right: 0;
-        text-align: center;
-        @extend .transform;
-
-        @media only screen and (max-width: 678px) {
-            padding: 20px;
-        }
-    }
-    h2 {
-        @include headline("Kanit", 800, auto, white, uppercase);
-        letter-spacing: 0.2rem;
-        padding: 60px;
-        position: absolute;
-        top: 35%;
-        left: 0;
-        right: 0;
-        text-align: center;
-        @extend .transform;
-
-        @media only screen and (max-width: 678px) {
-            top: 25%;
-        }
-    }
-    h3 {
-        @include headline("Kanit", auto, 4rem, white, uppercase);
-        letter-spacing: 0.1rem;
-        padding: 60px;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        text-align: center;
-        @extend .transform;
-
-        @media only screen and (max-width: 678px) {
-            padding: 20px;
-        }
-    }
 
     .face {
         position: absolute;
@@ -342,13 +360,59 @@ BOTTOM NAV
         z-index: 2;
         // background: $primary;
 
+        h1 {
+            @include headline("Kanit", 100, auto, white, auto);
+            font-style: italic;
+            padding: 60px;
+            position: absolute;
+            top: 55%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            @extend .transform;
+
+            @media only screen and (max-width: 678px) {
+                padding: 20px;
+            }
+        }
+        h2 {
+            @include headline("Kanit", 800, auto, white, uppercase);
+            letter-spacing: 0.2rem;
+            padding: 60px;
+            position: absolute;
+            top: 35%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            @extend .transform;
+
+            @media only screen and (max-width: 678px) {
+                top: 25%;
+            }
+        }
+        h3 {
+            @include headline("Kanit", auto, 4rem, white, uppercase);
+            letter-spacing: 0.1rem;
+            padding: 60px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            @extend .transform;
+
+            @media only screen and (max-width: 678px) {
+                padding: 20px;
+            }
+        }
+
         &.hover {
             box-shadow: inset 0px -30px 400px rgba(0,0,0,0.2);
             -webkit-transform: rotateX(-90deg) translateZ(200px);
             transform: rotateX(-90deg) translateZ(200px);
             overflow: hidden;
 
-            .info1 {
+            .read-more1 {
                 width: 100%;
                 height: 100%;
                 background: rgba(13, 73, 116, 1);
@@ -356,7 +420,7 @@ BOTTOM NAV
                 padding: 15px 30px;
                 box-sizing: border-box;
             }
-            .info2 {
+            .read-more2 {
                 width: 100%;
                 height: 100%;
                 background: rgba(227, 78, 54, 1);
@@ -364,7 +428,7 @@ BOTTOM NAV
                 padding: 15px 30px;
                 box-sizing: border-box;
             }
-            .info3 {
+            .read-more3 {
                 width: 100%;
                 height: 100%;
                 background: rgba(254, 196, 79, 1);
@@ -376,20 +440,37 @@ BOTTOM NAV
     }
 }
 
-.feature.two .face {
-    background-image:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
-        url("../images/_bottom-nav1.jpg");
-    background-size: cover;
+.trigger-bottom {
+    @extend .trigger-top;
+    width: calc(100% / 3);
+
+    @media only screen and (max-width: 678px) {
+        width: 100%;
+    }
 }
 
-.feature.three .face {
-    background: $primary url(../img/slides/thumb-dusk.jpg) no-repeat left bottom;
+.feature {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform .4s ease-in-out, opacity 1.5s ease-in-out;
+    -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
+    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateX(0deg) translateZ(0);
+    transform: rotateX(0deg) translateZ(0);
 }
 
-.feature.one .face {
-    background-image:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
-        url("../images/_bottom-nav3.jpg");
-    background-size: cover;
+@each $nav-button in $nav-buttons {
+	.bottom-#{$nav-button} {
+		background-image:
+			linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
+			url("../images/_bottom-#{$nav-button}.jpg");
+		background-size: cover;
+        background-position: center;
+	}
 }
