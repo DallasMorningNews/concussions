@@ -68,7 +68,7 @@ TOP NAV
     backface-visibility: hidden;
     display: none;
 
-    .face {
+    .top-face {
         position: absolute;
         height: 100%;
         width: 100%;
@@ -449,21 +449,27 @@ BOTTOM NAV
     }
 }
 
-.feature {
-    width: 100%;
-    height: 100%;
-    -webkit-transition: -webkit-transform .4s ease-in-out, opacity 1.5s ease-in-out;
-    -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-    transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
-    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: rotateX(0deg) translateZ(0);
-    transform: rotateX(0deg) translateZ(0);
+.trigger-bottom:hover .feature, .stick .feature {
+    -webkit-transform: rotateX(-90deg) translateZ(0);
+    transform: rotateX(-90deg) translateZ(0);
+    bottom: 10px;
 }
+
+// .feature {
+//     width: 100%;
+//     height: 100%;
+//     -webkit-transition: -webkit-transform .4s ease-in-out, opacity 1.5s ease-in-out;
+//     -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+//     transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+//     transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
+//     transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+//     -webkit-transform-style: preserve-3d;
+//     transform-style: preserve-3d;
+//     -webkit-backface-visibility: hidden;
+//     backface-visibility: hidden;
+//     -webkit-transform: rotateX(0deg) translateZ(0);
+//     transform: rotateX(0deg) translateZ(0);
+// }
 
 @each $nav-button in $nav-buttons {
 	.bottom-#{$nav-button} {
