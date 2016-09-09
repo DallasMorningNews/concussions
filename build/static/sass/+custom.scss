@@ -37,6 +37,12 @@ $nav-buttons: nav1 nav2 nav3;
 	-webkit-transition:.5s;
 }
 
+.transform {
+    -ms-transform: translateY(-50%); /* IE 9 */
+    -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+    transform: translateY(-50%);
+}
+
 
 /**************
 MISC TEMPLATE EDITS
@@ -81,9 +87,7 @@ TOP NAV
 		left: 0;
 		right: 0;
 		text-align: center;
-		-ms-transform: translateY(-50%); /* IE 9 */
-	    -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
-	    transform: translateY(-50%);
+        @extend .transform;
 
 		@media only screen and (max-width: 678px) {
 			font-size: 2.5rem;
@@ -104,7 +108,7 @@ HEADER AND DECK
 		line-height: 6rem;
 	}
 	h2 {
-		@include headline("Kanit", 300, auto, auto, auto);
+		@include headline("Kanit", 200, auto, auto, auto);
 		font-style: italic;
 	}
 }
@@ -118,6 +122,45 @@ HEADER AND DECK
 	@include headline("Kanit", 300, auto, $secondary-dark, uppercase);
 }
 
+/**************
+STORY CONTENT
+**************/
+
+.quote-wrapper {
+    margin: 4rem 0;
+    background-color: $secondary-darker;
+    height: 600px;
+    position: relative;
+
+    p {
+        @include headline("Kanit", auto, 4rem, white, auto);
+        line-height: 4.8rem;
+        letter-spacing: 0.2rem;
+        position: absolute;
+        top: 40%;
+        padding: 0 10rem;
+        @extend .transform;
+    }
+    h5 {
+        @include headline("Kanit", 100, 3rem, white, auto);
+        font-style: italic;
+        line-height: 3.6rem;
+        position: absolute;
+        right: 15rem;
+        top: 70%;
+        padding: 0.5rem 0.8rem;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        // padding: 0 20rem;
+        @extend .transform;
+        background-color: $primary;
+    }
+}
+
+
+.quotes {
+    color: $primary;
+}
 
 /**************
 BOTTOM NAV
@@ -150,9 +193,7 @@ BOTTOM NAV
 		left: 0;
 		right: 0;
 		text-align: center;
-		-ms-transform: translateY(-50%); /* IE 9 */
-	    -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
-	    transform: translateY(-50%);
+        @extend .transform;
 
 		@media only screen and (max-width: 678px) {
 			padding: 20px;
@@ -168,9 +209,7 @@ BOTTOM NAV
 		left: 0;
 		right: 0;
 		text-align: center;
-		-ms-transform: translateY(-50%); /* IE 9 */
-		-webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
-		transform: translateY(-50%);
+        @extend .transform;
 
 		@media only screen and (max-width: 678px) {
 			top: 25%;
@@ -189,4 +228,168 @@ BOTTOM NAV
 			url("../images/_bottom-#{$nav-button}.jpg");
 		background-size: cover;
 	}
+}
+
+
+
+
+#work {
+    width: 100%;
+    height: 400px;
+    // position: absolute;
+    // bottom: 0;
+    background: #fff;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: none;
+}
+
+.trigger {
+    width: calc(100% / 3);
+    float: left;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.trigger:hover .feature, .stick .feature {
+    -webkit-transform: rotateX(90deg) translateZ(0);
+    transform: rotateX(90deg) translateZ(0);
+    bottom: 10px;
+}
+
+
+.feature {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform .4s ease-in-out, opacity 1.5s ease-in-out;
+    -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
+    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateX(0deg) translateZ(0);
+    transform: rotateX(0deg) translateZ(0);
+
+    h1 {
+        @include headline("Kanit", 100, auto, white, auto);
+        font-style: italic;
+        padding: 60px;
+        position: absolute;
+        top: 55%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        @extend .transform;
+
+        @media only screen and (max-width: 678px) {
+            padding: 20px;
+        }
+    }
+    h2 {
+        @include headline("Kanit", 800, auto, white, uppercase);
+        letter-spacing: 0.2rem;
+        padding: 60px;
+        position: absolute;
+        top: 35%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        @extend .transform;
+
+        @media only screen and (max-width: 678px) {
+            top: 25%;
+        }
+    }
+    h3 {
+        @include headline("Kanit", auto, 4rem, white, uppercase);
+        letter-spacing: 0.1rem;
+        padding: 60px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        @extend .transform;
+
+        @media only screen and (max-width: 678px) {
+            padding: 20px;
+        }
+    }
+
+    .face {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        -webkit-transform: rotateX(0deg) translateZ(200px);
+        transform: rotateX(0deg) translateZ(200px);
+        -webkit-transition: box-shadow .5s ease-in-out;
+        transition: box-shadow .5s ease-in-out;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        z-index: 2;
+        // background: $primary;
+
+        &.hover {
+            box-shadow: inset 0px -30px 400px rgba(0,0,0,0.2);
+            -webkit-transform: rotateX(-90deg) translateZ(200px);
+            transform: rotateX(-90deg) translateZ(200px);
+            overflow: hidden;
+
+            .info1 {
+                width: 100%;
+                height: 100%;
+                background: rgba(13, 73, 116, 1);
+                color: #fff;
+                padding: 15px 30px;
+                box-sizing: border-box;
+            }
+            .info2 {
+                width: 100%;
+                height: 100%;
+                background: rgba(227, 78, 54, 1);
+                color: #fff;
+                padding: 15px 30px;
+                box-sizing: border-box;
+            }
+            .info3 {
+                width: 100%;
+                height: 100%;
+                background: rgba(254, 196, 79, 1);
+                color: #fff;
+                padding: 15px 30px;
+                box-sizing: border-box;
+            }
+        }
+    }
+}
+
+.feature.two .face {
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
+        url("../images/_bottom-nav1.jpg");
+    background-size: cover;
+}
+
+.feature.three .face {
+    background: $primary url(../img/slides/thumb-dusk.jpg) no-repeat left bottom;
+}
+
+.feature.one .face {
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
+        url("../images/_bottom-nav3.jpg");
+    background-size: cover;
 }
