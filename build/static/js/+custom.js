@@ -12,20 +12,20 @@ $(document).ready(function() {
 
 	// Makes bottom nav slide up and down
 
-	var slideBottom = $('#dfpAdPositionTop').offset().top;       // get initial position of the element
+		// var slideBottom = $('#dfpAdPositionTop').offset().top;       // get initial position of the element
 
 
-	$(window).scroll(function() {                  // assign scroll event listener
-
-	    var currentScroll = $(window).scrollTop(); // get current position
-
-	    if (currentScroll >= slideBottom) {
-	        $("#bottom-nav-wrapper").slideDown(800);
-	    }
-		// else { $("#bottom-nav-wrapper").slideUp(800); }
-
-
-	});
+		// $(window).scroll(function() {                  // assign scroll event listener
+		//
+		//     var currentScroll = $(window).scrollTop(); // get current position
+		//
+		//     if (currentScroll >= slideBottom) {
+		//         $("#bottom-nav-wrapper").slideDown(800);
+		//     }
+		// 	// else { $("#bottom-nav-wrapper").slideUp(800); }
+		//
+		//
+		// });
 
 
 

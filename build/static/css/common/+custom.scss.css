@@ -1,10 +1,10 @@
-.transition, #top-nav-wrapper .active {
+.transition, #top-nav-wrapper .active, #bottom-nav-wrapper .active {
   -o-transition: .5s;
   -ms-transition: .5s;
   -moz-transition: .5s;
   -webkit-transition: .5s; }
 
-.transform, #top-nav-wrapper .top-face h1, #top-nav-wrapper .top-face h2, .quote-wrapper p, .quote-wrapper h5, #bottom-nav-wrapper .face h1, #bottom-nav-wrapper .face h2, #bottom-nav-wrapper .face h3 {
+.transform, #top-nav-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #bottom-nav-wrapper .face h1, #top-nav-wrapper .top-face h2, #bottom-nav-wrapper .top-face h2, #bottom-nav-wrapper .face h2, .quote-wrapper p, .quote-wrapper h5, #bottom-nav-wrapper .face h3 {
   -ms-transform: translateY(-50%);
   /* IE 9 */
   -webkit-transform: translateY(-50%);
@@ -17,17 +17,16 @@ MISC TEMPLATE EDITS
 /**************
 TOP NAV
 **************/
-#top-nav-wrapper {
+#top-nav-wrapper, #bottom-nav-wrapper {
   display: none;
   width: 100%;
   height: 100px;
-  background: #fff;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: none; }
-  #top-nav-wrapper .top-face {
+  #top-nav-wrapper .top-face, #bottom-nav-wrapper .top-face, #bottom-nav-wrapper .face {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -40,7 +39,7 @@ TOP NAV
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     z-index: 2; }
-    #top-nav-wrapper .top-face h1 {
+    #top-nav-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #bottom-nav-wrapper .face h1 {
       font-family: "Kanit";
       font-weight: 800;
       font-size: auto;
@@ -53,10 +52,10 @@ TOP NAV
       right: 0;
       text-align: center; }
       @media only screen and (max-width: 678px) {
-        #top-nav-wrapper .top-face h1 {
+        #top-nav-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #bottom-nav-wrapper .face h1 {
           font-size: 2.5rem;
           line-height: 2.1rem; } }
-    #top-nav-wrapper .top-face h2 {
+    #top-nav-wrapper .top-face h2, #bottom-nav-wrapper .top-face h2, #bottom-nav-wrapper .face h2 {
       font-family: "Kanit";
       font-weight: 100;
       font-size: auto;
@@ -70,25 +69,25 @@ TOP NAV
       right: 0;
       text-align: center; }
       @media only screen and (max-width: 678px) {
-        #top-nav-wrapper .top-face h2 {
+        #top-nav-wrapper .top-face h2, #bottom-nav-wrapper .top-face h2, #bottom-nav-wrapper .face h2 {
           padding: 20px; } }
-    #top-nav-wrapper .top-face.hover {
+    #top-nav-wrapper .top-face.hover, #bottom-nav-wrapper .top-face.hover, #bottom-nav-wrapper .hover.face {
       box-shadow: inset 0px -30px 100px rgba(0, 0, 0, 0.2);
       -webkit-transform: rotateX(90deg) translateZ(50px);
       transform: rotateX(90deg) translateZ(50px);
       overflow: hidden; }
-      #top-nav-wrapper .top-face.hover .nav-hed2 {
+      #top-nav-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .hover.face .nav-hed2 {
         background-color: #fec44f; }
-      #top-nav-wrapper .top-face.hover .nav-hed3 {
+      #top-nav-wrapper .top-face.hover .nav-hed3, #bottom-nav-wrapper .top-face.hover .nav-hed3, #bottom-nav-wrapper .hover.face .nav-hed3 {
         background: #fec44f; }
-      #top-nav-wrapper .top-face.hover .nav-hed4 {
+      #top-nav-wrapper .top-face.hover .nav-hed4, #bottom-nav-wrapper .top-face.hover .nav-hed4, #bottom-nav-wrapper .hover.face .nav-hed4 {
         background: #fec44f; }
-  #top-nav-wrapper .active {
+  #top-nav-wrapper .active, #bottom-nav-wrapper .active {
     background: #e34e36; }
-    #top-nav-wrapper .active h1 {
+    #top-nav-wrapper .active h1, #bottom-nav-wrapper .active h1 {
       color: white; }
 
-.nav-hed, #top-nav-wrapper .top-face.hover .nav-hed2, #top-nav-wrapper .top-face.hover .nav-hed3, #top-nav-wrapper .top-face.hover .nav-hed4 {
+.nav-hed, #top-nav-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .hover.face .nav-hed2, #top-nav-wrapper .top-face.hover .nav-hed3, #bottom-nav-wrapper .top-face.hover .nav-hed3, #bottom-nav-wrapper .hover.face .nav-hed3, #top-nav-wrapper .top-face.hover .nav-hed4, #bottom-nav-wrapper .top-face.hover .nav-hed4, #bottom-nav-wrapper .hover.face .nav-hed4, #bottom-nav-wrapper .face.hover .read-more1, #bottom-nav-wrapper .face.hover .read-more2, #bottom-nav-wrapper .face.hover .read-more3 {
   width: 100%;
   height: 100%;
   color: #fff;
@@ -121,7 +120,7 @@ TOP NAV
   -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
   transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
   transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
-  transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .5s ease-in-out;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
@@ -208,46 +207,27 @@ STORY CONTENT
 /**************
 BOTTOM NAV
 **************/
-#bottom-nav1 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav1.jpg");
-  background-size: cover; }
-
-#bottom-nav2 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav2.jpg");
-  background-size: cover; }
-
-#bottom-nav3 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav3.jpg");
-  background-size: cover; }
-
 #bottom-nav-wrapper {
-  width: 100%;
-  height: 400px;
-  background: #fff;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  display: none; }
+  display: block;
+  height: 400px; }
+  #bottom-nav-wrapper #bottom-nav1 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav1.jpg");
+    background-size: cover; }
+  #bottom-nav-wrapper #bottom-nav2 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav2.jpg");
+    background-size: cover; }
+  #bottom-nav-wrapper #bottom-nav3 {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav3.jpg");
+    background-size: cover; }
   #bottom-nav-wrapper .face {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     -webkit-transform: rotateX(0deg) translateZ(200px);
-    transform: rotateX(0deg) translateZ(200px);
-    -webkit-transition: box-shadow .5s ease-in-out;
-    transition: box-shadow .5s ease-in-out;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    z-index: 2; }
+    transform: rotateX(0deg) translateZ(200px); }
     #bottom-nav-wrapper .face h1 {
       font-family: "Kanit";
       font-weight: 100;
       font-size: auto;
       color: white;
-      text-transform: auto;
+      text-transform: none;
       font-style: italic;
       padding: 60px;
       position: absolute;
@@ -264,6 +244,7 @@ BOTTOM NAV
       font-size: auto;
       color: white;
       text-transform: uppercase;
+      font-style: normal;
       letter-spacing: 0.2rem;
       padding: 60px;
       position: absolute;
@@ -296,49 +277,16 @@ BOTTOM NAV
       transform: rotateX(-90deg) translateZ(200px);
       overflow: hidden; }
       #bottom-nav-wrapper .face.hover .read-more1 {
-        width: 100%;
-        height: 100%;
-        background: #0d4974;
-        color: #fff;
-        padding: 15px 30px;
-        box-sizing: border-box; }
+        background: #0d4974; }
       #bottom-nav-wrapper .face.hover .read-more2 {
-        width: 100%;
-        height: 100%;
-        background: #e34e36;
-        color: #fff;
-        padding: 15px 30px;
-        box-sizing: border-box; }
+        background: #e34e36; }
       #bottom-nav-wrapper .face.hover .read-more3 {
-        width: 100%;
-        height: 100%;
-        background: #fec44f;
-        color: #fff;
-        padding: 15px 30px;
-        box-sizing: border-box; }
+        background: #fec44f; }
 
 .trigger-bottom {
   width: calc(100% / 3); }
-  @media only screen and (max-width: 678px) {
-    .trigger-bottom {
-      width: 100%; } }
 
 .trigger-bottom:hover .feature, .stick .feature {
-  -webkit-transform: rotateX(-90deg) translateZ(0);
-  transform: rotateX(-90deg) translateZ(0);
+  -webkit-transform: rotateX(90deg) translateZ(0);
+  transform: rotateX(90deg) translateZ(0);
   bottom: 10px; }
-
-.bottom-nav1 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav1.jpg");
-  background-size: cover;
-  background-position: center; }
-
-.bottom-nav2 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav2.jpg");
-  background-size: cover;
-  background-position: center; }
-
-.bottom-nav3 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav3.jpg");
-  background-size: cover;
-  background-position: center; }

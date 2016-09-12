@@ -14,7 +14,6 @@ $primary: $chartRed;
 $secondary: $chartBlue;
 $secondary-dark: darken($secondary, 20%);
 $secondary-darker: darken($secondary, 30%);
-
 $tertiary: $chartYellow;
 
 $normal: #323232;
@@ -36,7 +35,6 @@ $nav-buttons: nav1 nav2 nav3;
 	-moz-transition:.5s;
 	-webkit-transition:.5s;
 }
-
 .transform {
     -ms-transform: translateY(-50%); /* IE 9 */
     -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
@@ -48,20 +46,14 @@ $nav-buttons: nav1 nav2 nav3;
 MISC TEMPLATE EDITS
 **************/
 
-
-
 /**************
 TOP NAV
 **************/
-
 
 #top-nav-wrapper {
     display: none;
     width: 100%;
     height: 100px;
-    // position: absolute;
-    // bottom: 0;
-    background: #fff;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
@@ -74,7 +66,6 @@ TOP NAV
         width: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-
         -webkit-transform: rotateX(0deg) translateZ(50px);
         transform: rotateX(0deg) translateZ(50px);
         -webkit-transition: box-shadow .5s ease-in-out;
@@ -82,7 +73,6 @@ TOP NAV
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         z-index: 2;
-        // background: $primary;
 
     	h1 {
     		@include headline("Kanit", 800, auto, $light, uppercase);
@@ -114,7 +104,6 @@ TOP NAV
                 padding: 20px;
             }
         }
-
         &.hover {
             box-shadow: inset 0px -30px 100px rgba(0,0,0,0.2);
             -webkit-transform: rotateX(90deg) translateZ(50px);
@@ -144,7 +133,6 @@ TOP NAV
         }
     }
 }
-
 .nav-hed {
     width: 100%;
     height: 100%;
@@ -152,7 +140,6 @@ TOP NAV
     padding: 15px 30px;
     box-sizing: border-box;
 }
-
 .trigger-top {
     width: calc(100% / 4);
     float: left;
@@ -168,13 +155,11 @@ TOP NAV
         width: 100%;
     }
 }
-
 .trigger-top:hover .feature, .stick .feature {
     -webkit-transform: rotateX(-90deg) translateZ(0);
     transform: rotateX(-90deg) translateZ(0);
     bottom: 10px;
 }
-
 .feature {
     width: 100%;
     height: 100%;
@@ -182,7 +167,7 @@ TOP NAV
     -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
     transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
     transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
-    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
+    transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .5s ease-in-out;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
@@ -190,11 +175,9 @@ TOP NAV
     -webkit-transform: rotateX(0deg) translateZ(0);
     transform: rotateX(0deg) translateZ(0);
 }
-
 .top-nav {
     background: $secondary-darker;
 }
-
 
 /**************
 HEADER AND DECK
@@ -211,12 +194,10 @@ HEADER AND DECK
 		font-style: italic;
 	}
 }
-
 .byline-block {
 	@include headline("Kanit", 300, auto, auto, auto);
 	font-style: italic;
 }
-
 .dropcap {
 	@include headline("Kanit", 300, auto, $secondary-dark, uppercase);
 }
@@ -255,8 +236,6 @@ STORY CONTENT
         background-color: $primary;
     }
 }
-
-
 .quotes {
     color: $primary;
 }
@@ -265,103 +244,26 @@ STORY CONTENT
 BOTTOM NAV
 **************/
 
-// #bottom-nav-wrapper {
-// 	margin-top: 60px;
-// 	display: none;
-// }
-//
-// .bottom-nav {
-// 	height: 400px;
-// 	background: $secondary-darker;
-// 	cursor: pointer;
-//
-// 	&:hover {
-// 		background: $secondary-darker !important;
-// 		@extend .transition;
-// 		h2 {
-// 			color: white;
-// 		}
-// 	}
-//
-// 	h1 {
-// 		@include headline("Kanit", 100, auto, white, auto);
-// 		font-style: italic;
-// 		padding: 60px;
-// 		position: absolute;
-// 		top: 55%;
-// 		left: 0;
-// 		right: 0;
-// 		text-align: center;
-//         @extend .transform;
-//
-// 		@media only screen and (max-width: 678px) {
-// 			padding: 20px;
-// 		}
-// 	}
-//
-// 	h2 {
-// 		@include headline("Kanit", 800, auto, white, uppercase);
-// 		letter-spacing: 0.2rem;
-// 		padding: 60px;
-// 		position: absolute;
-// 		top: 35%;
-// 		left: 0;
-// 		right: 0;
-// 		text-align: center;
-//         @extend .transform;
-//
-// 		@media only screen and (max-width: 678px) {
-// 			top: 25%;
-// 		}
-// 	}
-//
-// 	@media only screen and (max-width: 678px) {
-// 		height: 200px;
-// 	}
-// }
-
-@each $nav-button in $nav-buttons {
-	#bottom-#{$nav-button} {
-		background-image:
-			linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
-			url("../images/_bottom-#{$nav-button}.jpg");
-		background-size: cover;
-	}
-}
-
-
-
-
 #bottom-nav-wrapper {
-    width: 100%;
+    @extend #top-nav-wrapper;
+    display: block;
     height: 400px;
-    // position: absolute;
-    // bottom: 0;
-    background: #fff;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    display: none;
 
+    @each $nav-button in $nav-buttons {
+    	#bottom-#{$nav-button} {
+    		background-image:
+    			linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
+    			url("../images/_bottom-#{$nav-button}.jpg");
+    		background-size: cover;
+    	}
+    }
     .face {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-
+        @extend .top-face;
         -webkit-transform: rotateX(0deg) translateZ(200px);
         transform: rotateX(0deg) translateZ(200px);
-        -webkit-transition: box-shadow .5s ease-in-out;
-        transition: box-shadow .5s ease-in-out;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        z-index: 2;
-        // background: $primary;
 
         h1 {
-            @include headline("Kanit", 100, auto, white, auto);
+            @include headline("Kanit", 100, auto, white, none);
             font-style: italic;
             padding: 60px;
             position: absolute;
@@ -377,6 +279,7 @@ BOTTOM NAV
         }
         h2 {
             @include headline("Kanit", 800, auto, white, uppercase);
+            font-style: normal;
             letter-spacing: 0.2rem;
             padding: 60px;
             position: absolute;
@@ -405,7 +308,6 @@ BOTTOM NAV
                 padding: 20px;
             }
         }
-
         &.hover {
             box-shadow: inset 0px -30px 400px rgba(0,0,0,0.2);
             -webkit-transform: rotateX(-90deg) translateZ(200px);
@@ -413,28 +315,16 @@ BOTTOM NAV
             overflow: hidden;
 
             .read-more1 {
-                width: 100%;
-                height: 100%;
+                @extend .nav-hed;
                 background: rgba(13, 73, 116, 1);
-                color: #fff;
-                padding: 15px 30px;
-                box-sizing: border-box;
             }
             .read-more2 {
-                width: 100%;
-                height: 100%;
+                @extend .nav-hed;
                 background: rgba(227, 78, 54, 1);
-                color: #fff;
-                padding: 15px 30px;
-                box-sizing: border-box;
             }
             .read-more3 {
-                width: 100%;
-                height: 100%;
+                @extend .nav-hed;
                 background: rgba(254, 196, 79, 1);
-                color: #fff;
-                padding: 15px 30px;
-                box-sizing: border-box;
             }
         }
     }
@@ -443,40 +333,10 @@ BOTTOM NAV
 .trigger-bottom {
     @extend .trigger-top;
     width: calc(100% / 3);
-
-    @media only screen and (max-width: 678px) {
-        width: 100%;
-    }
 }
 
 .trigger-bottom:hover .feature, .stick .feature {
-    -webkit-transform: rotateX(-90deg) translateZ(0);
-    transform: rotateX(-90deg) translateZ(0);
+    -webkit-transform: rotateX(90deg) translateZ(0);
+    transform: rotateX(90deg) translateZ(0);
     bottom: 10px;
-}
-
-// .feature {
-//     width: 100%;
-//     height: 100%;
-//     -webkit-transition: -webkit-transform .4s ease-in-out, opacity 1.5s ease-in-out;
-//     -webkit-transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-//     transition: opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-//     transition: transform .4s ease-in-out, opacity 1.5s ease-in-out;
-//     transition: transform .4s ease-in-out, opacity 1.5s ease-in-out, -webkit-transform .4s ease-in-out;
-//     -webkit-transform-style: preserve-3d;
-//     transform-style: preserve-3d;
-//     -webkit-backface-visibility: hidden;
-//     backface-visibility: hidden;
-//     -webkit-transform: rotateX(0deg) translateZ(0);
-//     transform: rotateX(0deg) translateZ(0);
-// }
-
-@each $nav-button in $nav-buttons {
-	.bottom-#{$nav-button} {
-		background-image:
-			linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
-			url("../images/_bottom-#{$nav-button}.jpg");
-		background-size: cover;
-        background-position: center;
-	}
 }
