@@ -12,20 +12,22 @@ $(document).ready(function() {
 
 	// Makes bottom nav slide up and down
 
-		// var slideBottom = $('#dfpAdPositionTop').offset().top;       // get initial position of the element
+		// get initial position of the element
+		var flipAttr = $('.quote-wrapper1').offset().top;
+
+		// assign scroll event listener
+		$(window).scroll(function() {
+
+		    var currentScroll = $(window).scrollTop() + ($(window).height() / 4); // get current position
+
+			console.log(currentScroll, flipAttr);
+
+		    if (currentScroll >= flipAttr) {
+		        $(".trigger-quote").addClass("flip");
+		    }
 
 
-		// $(window).scroll(function() {                  // assign scroll event listener
-		//
-		//     var currentScroll = $(window).scrollTop(); // get current position
-		//
-		//     if (currentScroll >= slideBottom) {
-		//         $("#bottom-nav-wrapper").slideDown(800);
-		//     }
-		// 	// else { $("#bottom-nav-wrapper").slideUp(800); }
-		//
-		//
-		// });
+		});
 
 
 

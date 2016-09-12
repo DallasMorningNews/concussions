@@ -1,2 +1,2 @@
-$(document).ready(function(){$("#top-nav-wrapper").delay(800).slideDown(),setTimeout(function(){$("#top-nav-1").delay(1500).addClass("active")},1200);var e=new Date,t=e.getFullYear();$(".copyright").text(t)});
+$(document).ready(function(){$("#top-nav-wrapper").delay(800).slideDown(),setTimeout(function(){$("#top-nav-1").delay(1500).addClass("active")},1200);var o=$(".quote-wrapper1").offset().top;$(window).scroll(function(){var e=$(window).scrollTop()+$(window).height()/4;console.log(e,o),e>=o&&$(".trigger-quote").addClass("flip")});var e=new Date,t=e.getFullYear();$(".copyright").text(t)});
 //# sourceMappingURL=scripts-bundle.js.map
