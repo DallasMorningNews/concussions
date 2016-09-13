@@ -914,7 +914,7 @@ XIX. ADS
   -moz-transition: .5s;
   -webkit-transition: .5s; }
 
-.transform, #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1, #bottom-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #bottom-nav-wrapper .quote-face h1, #bottom-nav-wrapper .face h1, #top-nav-wrapper .top-face h2, .attr-wrapper .top-face h2, #bottom-nav-wrapper .top-face h2, #top-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #top-nav-wrapper .quote-face h2, .attr-wrapper .quote-face h2, #bottom-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #bottom-nav-wrapper .quote-face h2, #bottom-nav-wrapper .face h2, .quote-wrapper2, .attr-wrapper .quote-face h5, #bottom-nav-wrapper .face h3 {
+.transform, #parts h1, #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1, #bottom-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #bottom-nav-wrapper .quote-face h1, #bottom-nav-wrapper .face h1, #top-nav-wrapper .top-face h2, .attr-wrapper .top-face h2, #bottom-nav-wrapper .top-face h2, #top-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #top-nav-wrapper .quote-face h2, .attr-wrapper .quote-face h2, #bottom-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #bottom-nav-wrapper .quote-face h2, #bottom-nav-wrapper .face h2, .quote-wrapper2, .attr-wrapper .quote-face h5, .attr-wrapper .quote-face .quote-mob, #bottom-nav-wrapper .face h3 {
   -ms-transform: translateY(-50%);
   /* IE 9 */
   -webkit-transform: translateY(-50%);
@@ -927,8 +927,29 @@ MISC TEMPLATE EDITS
 /**************
 TOP NAV
 **************/
-#top-nav-wrapper, .attr-wrapper, #bottom-nav-wrapper {
+#parts {
   display: none;
+  height: 40px;
+  background-color: #fec44f;
+  padding-top: 20px; }
+  #parts h1 {
+    font-family: "Kanit";
+    font-weight: 100;
+    font-size: 3rem;
+    color: white;
+    text-transform: auto;
+    line-height: 3.2rem;
+    font-style: italic;
+    text-align: center; }
+    @media only screen and (max-width: 678px) {
+      #parts h1 {
+        line-height: 3.2rem;
+        padding: 2rem; } }
+  @media only screen and (max-width: 678px) {
+    #parts {
+      display: block; } }
+
+#top-nav-wrapper, .attr-wrapper, #bottom-nav-wrapper {
   width: 100%;
   height: 100px;
   -webkit-transform-style: preserve-3d;
@@ -949,6 +970,9 @@ TOP NAV
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     z-index: 2; }
+    @media only screen and (max-width: 678px) {
+      #top-nav-wrapper .top-face .part, .attr-wrapper .top-face .part, #bottom-nav-wrapper .top-face .part, #top-nav-wrapper .attr-wrapper .quote-face .part, .attr-wrapper #top-nav-wrapper .quote-face .part, .attr-wrapper .quote-face .part, #bottom-nav-wrapper .attr-wrapper .quote-face .part, .attr-wrapper #bottom-nav-wrapper .quote-face .part, #bottom-nav-wrapper .face .part {
+        display: none; } }
     #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1, #bottom-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #bottom-nav-wrapper .quote-face h1, #bottom-nav-wrapper .face h1 {
       font-family: "Kanit";
       font-weight: 800;
@@ -998,6 +1022,9 @@ TOP NAV
     background: #e34e36; }
     #top-nav-wrapper .active h1, .attr-wrapper .active h1, #bottom-nav-wrapper .active h1 {
       color: white; }
+  @media only screen and (max-width: 678px) {
+    #top-nav-wrapper, .attr-wrapper, #bottom-nav-wrapper {
+      height: 70px; } }
 
 .nav-hed, #top-nav-wrapper .top-face.hover .nav-hed2, .attr-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .top-face.hover .nav-hed2, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed2, .attr-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .hover.face .nav-hed2, #top-nav-wrapper .top-face.hover .nav-hed3, .attr-wrapper .top-face.hover .nav-hed3, #bottom-nav-wrapper .top-face.hover .nav-hed3, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed3, .attr-wrapper .hover.quote-face .nav-hed3, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed3, #bottom-nav-wrapper .hover.face .nav-hed3, #top-nav-wrapper .top-face.hover .nav-hed4, .attr-wrapper .top-face.hover .nav-hed4, #bottom-nav-wrapper .top-face.hover .nav-hed4, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed4, .attr-wrapper .hover.quote-face .nav-hed4, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed4, #bottom-nav-wrapper .hover.face .nav-hed4, #bottom-nav-wrapper .face.hover .read-more1, #bottom-nav-wrapper .face.hover .read-more2, #bottom-nav-wrapper .face.hover .read-more3 {
   width: 100%;
@@ -1016,14 +1043,15 @@ TOP NAV
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
-  @media only screen and (max-width: 678px) {
-    .trigger-top, .trigger-quote, .trigger-bottom {
-      width: 50%; } }
 
 .trigger-top:hover .feature, .trigger-quote:hover .feature, .trigger-bottom:hover .feature, .trigger-top:hover .trigger-quote, .trigger-quote:hover .trigger-quote, .trigger-bottom:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
   -webkit-transform: rotateX(-90deg) translateZ(0);
   transform: rotateX(-90deg) translateZ(0);
   bottom: 10px; }
+  @media only screen and (max-width: 678px) {
+    .trigger-top:hover .feature, .trigger-quote:hover .feature, .trigger-bottom:hover .feature, .trigger-top:hover .trigger-quote, .trigger-quote:hover .trigger-quote, .trigger-bottom:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
+      -webkit-transform: none;
+      transform: none; } }
 
 .feature, .trigger-quote {
   width: 100%;
@@ -1123,7 +1151,11 @@ STORY CONTENT
         font-size: 4rem;
         line-height: 4.8rem;
         padding: 0 3rem;
-        letter-spacing: 0.2rem; } }
+        letter-spacing: 0.2rem;
+        width: 80%;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto; } }
 
 .quotes {
   color: #e34e36; }
@@ -1145,9 +1177,16 @@ STORY CONTENT
     background: #fec44f; }
     @media only screen and (max-width: 678px) {
       .attr-wrapper .quote-face {
+        background: #e34e36;
         -webkit-transform: rotateX(0deg) translateZ(25px);
         transform: rotateX(0deg) translateZ(25px); } }
-    .attr-wrapper .quote-face h5 {
+    .attr-wrapper .quote-face .quote-mob {
+      display: none;
+      color: white; }
+      @media only screen and (max-width: 678px) {
+        .attr-wrapper .quote-face .quote-mob {
+          display: block; } }
+    .attr-wrapper .quote-face h5, .attr-wrapper .quote-face .quote-mob {
       font-family: "Kanit";
       font-weight: 100;
       font-size: 4rem;
@@ -1163,7 +1202,7 @@ STORY CONTENT
       padding: 0.5rem 0.8rem;
       margin: 0px; }
       @media only screen and (max-width: 678px) {
-        .attr-wrapper .quote-face h5 {
+        .attr-wrapper .quote-face h5, .attr-wrapper .quote-face .quote-mob {
           font-size: 2.6rem; } }
     .attr-wrapper .quote-face.hover {
       box-shadow: inset 0px -30px 400px rgba(0, 0, 0, 0.2);
@@ -1184,21 +1223,25 @@ STORY CONTENT
   width: 100%; }
 
 .trigger-quote:hover .feature, .trigger-quote:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
-  -webkit-transform: rotateX(90deg) translateZ(0);
-  transform: rotateX(90deg) translateZ(0);
+  -webkit-transform: rotateX(0deg) translateZ(0);
+  transform: rotateX(0deg) translateZ(0);
   bottom: 10px; }
 
 .flip {
   -webkit-transform: rotateX(90deg) translateZ(0);
-  transform: rotateX(90deg) translateZ(0);
-  bottom: 10px; }
+  transform: rotateX(90deg) translateZ(0); }
+  @media only screen and (max-width: 678px) {
+    .flip {
+      -webkit-transform: rotateX(0deg) translateZ(0);
+      transform: rotateX(0deg) translateZ(0); } }
 
 /**************
 BOTTOM NAV
 **************/
 #bottom-nav-wrapper {
   display: block;
-  height: 400px; }
+  height: 400px;
+  margin-bottom: 4rem; }
   #bottom-nav-wrapper #bottom-nav1 {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav1.jpg");
     background-size: cover; }
@@ -1229,6 +1272,16 @@ BOTTOM NAV
       left: 0;
       right: 0;
       text-align: center; }
+      @media only screen and (max-width: 1464px) {
+        #bottom-nav-wrapper .face h1 {
+          font-size: 3.5rem;
+          width: 90%;
+          padding: 0;
+          margin-left: auto;
+          margin-right: auto; } }
+      @media only screen and (max-width: 778px) {
+        #bottom-nav-wrapper .face h1 {
+          top: 60%; } }
       @media only screen and (max-width: 678px) {
         #bottom-nav-wrapper .face h1 {
           font-size: 3rem;
@@ -1249,10 +1302,12 @@ BOTTOM NAV
       left: 0;
       right: 0;
       text-align: center; }
+      @media only screen and (max-width: 778px) {
+        #bottom-nav-wrapper .face h2 {
+          top: 30%; } }
       @media only screen and (max-width: 678px) {
         #bottom-nav-wrapper .face h2 {
-          font-size: 2.5rem;
-          top: 30%; } }
+          font-size: 2.5rem; } }
     #bottom-nav-wrapper .face h3 {
       font-family: "Kanit";
       font-weight: auto;
@@ -1297,3 +1352,7 @@ BOTTOM NAV
   -webkit-transform: rotateX(90deg) translateZ(0);
   transform: rotateX(90deg) translateZ(0);
   bottom: 10px; }
+  @media only screen and (max-width: 678px) {
+    .trigger-bottom:hover .feature, .trigger-bottom:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
+      -webkit-transform: none;
+      transform: none; } }

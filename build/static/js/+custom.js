@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
 	//custom scripting goes here
-
+	var windowSize = $(window).width();
 
 	$("#top-nav-wrapper").delay(800).slideDown();
 	setTimeout(function(){
-		$("#top-nav-1").delay(1500).addClass("active");
-	}, 1200);
+		$("#top-nav1").addClass("active");
+	}, 1600);
 
 
 
@@ -18,17 +18,14 @@ $(document).ready(function() {
 		// assign scroll event listener
 		$(window).scroll(function() {
 
-		    var currentScroll = $(window).scrollTop() + ($(window).height() / 4); // get current position
+			if (windowSize > 678) {
+				var currentScroll = $(window).scrollTop() + ($(window).height() / 4); // get current position
 
-			console.log(currentScroll, flipAttr);
-
-		    if (currentScroll >= flipAttr) {
-		        $(".trigger-quote").addClass("flip");
-		    }
-
-
+			    if (currentScroll >= flipAttr) {
+			        $(".trigger-quote").addClass("flip");
+			    }	
+			}
 		});
-
 
 
 	// injecting current year into footer
