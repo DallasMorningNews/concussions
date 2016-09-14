@@ -3,11 +3,6 @@ $(document).ready(function() {
 	//custom scripting goes here
 	var windowSize = $(window).width();
 
-	$("#top-nav-wrapper").delay(800).slideDown();
-	setTimeout(function(){
-		$("#top-nav1").addClass("active");
-	}, 1600);
-
 
 
 	// Makes bottom nav slide up and down
@@ -23,7 +18,7 @@ $(document).ready(function() {
 
 			    if (currentScroll >= flipAttr) {
 			        $(".trigger-quote").addClass("flip");
-			    }	
+			    }
 			}
 		});
 

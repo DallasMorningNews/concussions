@@ -46,18 +46,25 @@ $nav-buttons: nav1 nav2 nav3;
 MISC TEMPLATE EDITS
 **************/
 
+#content-header img {
+    margin-top: -1px;
+}
+
 /**************
 TOP NAV
 **************/
 
 #parts {
     display: none;
-    height: 40px;
-    background-color: $tertiary;
+    float: left;
+    height: 70px;
+    height: 50px;
+    background-color: $secondary-darker;
     padding-top: 20px;
+    width: 25%;
 
     h1 {
-        @include headline("Kanit", 100, 3rem, white, auto);
+        @include headline("Kanit", 100, 2.2rem, white, auto);
         line-height: 3.2rem;
         font-style: italic;
         text-align: center;
@@ -65,22 +72,22 @@ TOP NAV
 
         @media only screen and (max-width: 678px) {
             line-height: 3.2rem;
-            padding: 2rem;
+            padding-top: 10px;
         }
     }
     @media only screen and (max-width: 678px) {
-        display: block;
+        display: inline-block;
     }
 }
 
 #top-nav-wrapper {
     width: 100%;
-    height: 100px;
+    height: 60px;
+    display: inline-block;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    display: none;
 
     .top-face {
         position: absolute;
@@ -88,8 +95,8 @@ TOP NAV
         width: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        -webkit-transform: rotateX(0deg) translateZ(50px);
-        transform: rotateX(0deg) translateZ(50px);
+        -webkit-transform: rotateX(0deg) translateZ(30px);
+        transform: rotateX(0deg) translateZ(30px);
         -webkit-transition: box-shadow .5s ease-in-out;
         transition: box-shadow .5s ease-in-out;
         -webkit-backface-visibility: hidden;
@@ -103,7 +110,7 @@ TOP NAV
         }
 
     	h1 {
-    		@include headline("Kanit", 800, 4rem, $light, uppercase);
+    		@include headline("Kanit", 800, 3rem, $light, uppercase);
     		letter-spacing: 0.2rem;
     		position: absolute;
     		top: 50%;
@@ -135,9 +142,9 @@ TOP NAV
             }
         }
         &.hover {
-            box-shadow: inset 0px -30px 100px rgba(0,0,0,0.2);
-            -webkit-transform: rotateX(90deg) translateZ(50px);
-            transform: rotateX(90deg) translateZ(50px);
+            box-shadow: inset 0px -30px 60px rgba(0,0,0,0.2);
+            -webkit-transform: rotateX(90deg) translateZ(30px);
+            transform: rotateX(90deg) translateZ(30px);
             overflow: hidden;
 
             .nav-hed2 {
@@ -164,7 +171,8 @@ TOP NAV
     }
 
     @media only screen and (max-width: 678px) {
-        height: 70px;
+        height: 50px;
+        width: 75%;
     }
 }
 .nav-hed {
@@ -184,6 +192,9 @@ TOP NAV
     transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    @media only screen and (max-width: 678px) {
+        width: calc(100% / 4);
+    }
 }
 .trigger-top:hover .feature, .stick .feature {
     -webkit-transform: rotateX(-90deg) translateZ(0);

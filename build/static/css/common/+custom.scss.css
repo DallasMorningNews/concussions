@@ -14,18 +14,24 @@
 /**************
 MISC TEMPLATE EDITS
 **************/
+#content-header img {
+  margin-top: -1px; }
+
 /**************
 TOP NAV
 **************/
 #parts {
   display: none;
-  height: 40px;
-  background-color: #fec44f;
-  padding-top: 20px; }
+  float: left;
+  height: 70px;
+  height: 50px;
+  background-color: #0d4974;
+  padding-top: 20px;
+  width: 25%; }
   #parts h1 {
     font-family: "Kanit";
     font-weight: 100;
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: white;
     text-transform: auto;
     line-height: 3.2rem;
@@ -34,27 +40,27 @@ TOP NAV
     @media only screen and (max-width: 678px) {
       #parts h1 {
         line-height: 3.2rem;
-        padding: 2rem; } }
+        padding-top: 10px; } }
   @media only screen and (max-width: 678px) {
     #parts {
-      display: block; } }
+      display: inline-block; } }
 
 #top-nav-wrapper, .attr-wrapper, #bottom-nav-wrapper {
   width: 100%;
-  height: 100px;
+  height: 60px;
+  display: inline-block;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  display: none; }
+  backface-visibility: hidden; }
   #top-nav-wrapper .top-face, .attr-wrapper .top-face, #bottom-nav-wrapper .top-face, #top-nav-wrapper .attr-wrapper .quote-face, .attr-wrapper #top-nav-wrapper .quote-face, .attr-wrapper .quote-face, #bottom-nav-wrapper .attr-wrapper .quote-face, .attr-wrapper #bottom-nav-wrapper .quote-face, #bottom-nav-wrapper .face {
     position: absolute;
     height: 100%;
     width: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-transform: rotateX(0deg) translateZ(50px);
-    transform: rotateX(0deg) translateZ(50px);
+    -webkit-transform: rotateX(0deg) translateZ(30px);
+    transform: rotateX(0deg) translateZ(30px);
     -webkit-transition: box-shadow .5s ease-in-out;
     transition: box-shadow .5s ease-in-out;
     -webkit-backface-visibility: hidden;
@@ -66,7 +72,7 @@ TOP NAV
     #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1, #bottom-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #bottom-nav-wrapper .quote-face h1, #bottom-nav-wrapper .face h1 {
       font-family: "Kanit";
       font-weight: 800;
-      font-size: 4rem;
+      font-size: 3rem;
       color: #c9c9c9;
       text-transform: uppercase;
       letter-spacing: 0.2rem;
@@ -98,9 +104,9 @@ TOP NAV
           line-height: 3.2rem;
           padding: 2rem; } }
     #top-nav-wrapper .top-face.hover, .attr-wrapper .top-face.hover, #bottom-nav-wrapper .top-face.hover, #top-nav-wrapper .attr-wrapper .hover.quote-face, .attr-wrapper #top-nav-wrapper .hover.quote-face, .attr-wrapper .hover.quote-face, #bottom-nav-wrapper .attr-wrapper .hover.quote-face, .attr-wrapper #bottom-nav-wrapper .hover.quote-face, #bottom-nav-wrapper .hover.face {
-      box-shadow: inset 0px -30px 100px rgba(0, 0, 0, 0.2);
-      -webkit-transform: rotateX(90deg) translateZ(50px);
-      transform: rotateX(90deg) translateZ(50px);
+      box-shadow: inset 0px -30px 60px rgba(0, 0, 0, 0.2);
+      -webkit-transform: rotateX(90deg) translateZ(30px);
+      transform: rotateX(90deg) translateZ(30px);
       overflow: hidden; }
       #top-nav-wrapper .top-face.hover .nav-hed2, .attr-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .top-face.hover .nav-hed2, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed2, .attr-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .hover.face .nav-hed2 {
         background-color: #fec44f; }
@@ -114,7 +120,8 @@ TOP NAV
       color: white; }
   @media only screen and (max-width: 678px) {
     #top-nav-wrapper, .attr-wrapper, #bottom-nav-wrapper {
-      height: 70px; } }
+      height: 50px;
+      width: 75%; } }
 
 .nav-hed, #top-nav-wrapper .top-face.hover .nav-hed2, .attr-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .top-face.hover .nav-hed2, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed2, .attr-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .hover.face .nav-hed2, #top-nav-wrapper .top-face.hover .nav-hed3, .attr-wrapper .top-face.hover .nav-hed3, #bottom-nav-wrapper .top-face.hover .nav-hed3, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed3, .attr-wrapper .hover.quote-face .nav-hed3, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed3, #bottom-nav-wrapper .hover.face .nav-hed3, #top-nav-wrapper .top-face.hover .nav-hed4, .attr-wrapper .top-face.hover .nav-hed4, #bottom-nav-wrapper .top-face.hover .nav-hed4, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed4, .attr-wrapper .hover.quote-face .nav-hed4, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed4, #bottom-nav-wrapper .hover.face .nav-hed4, #bottom-nav-wrapper .face.hover .read-more1, #bottom-nav-wrapper .face.hover .read-more2, #bottom-nav-wrapper .face.hover .read-more3 {
   width: 100%;
@@ -133,6 +140,9 @@ TOP NAV
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
+  @media only screen and (max-width: 678px) {
+    .trigger-top, .trigger-quote, .trigger-bottom {
+      width: calc(100% / 4); } }
 
 .trigger-top:hover .feature, .trigger-quote:hover .feature, .trigger-bottom:hover .feature, .trigger-top:hover .trigger-quote, .trigger-quote:hover .trigger-quote, .trigger-bottom:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
   -webkit-transform: rotateX(-90deg) translateZ(0);
