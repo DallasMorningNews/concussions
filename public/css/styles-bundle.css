@@ -908,13 +908,13 @@ XIX. ADS
     margin: 2.4rem 0;
     padding: 2.4rem 0; } }
 
-.transition, #top-nav-wrapper .active, .attr-wrapper .active, #bottom-nav-wrapper .active {
+.transition, #top-nav-wrapper .active, .attr-wrapper .active {
   -o-transition: .5s;
   -ms-transition: .5s;
   -moz-transition: .5s;
   -webkit-transition: .5s; }
 
-.transform, #parts h1, #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1, #bottom-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #bottom-nav-wrapper .quote-face h1, #bottom-nav-wrapper .face h1, #top-nav-wrapper .top-face h2, .attr-wrapper .top-face h2, #bottom-nav-wrapper .top-face h2, #top-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #top-nav-wrapper .quote-face h2, .attr-wrapper .quote-face h2, #bottom-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #bottom-nav-wrapper .quote-face h2, #bottom-nav-wrapper .face h2, .quote-wrapper2, .attr-wrapper .quote-face h5, .attr-wrapper .quote-face .quote-mob, #bottom-nav-wrapper .face h3 {
+.transform, #parts h1, #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1, #top-nav-wrapper .top-face h2, .attr-wrapper .top-face h2, #top-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #top-nav-wrapper .quote-face h2, .attr-wrapper .quote-face h2, .quote-wrapper2, .attr-wrapper .quote-face h5, .attr-wrapper .quote-face .quote-mob {
   -ms-transform: translateY(-50%);
   /* IE 9 */
   -webkit-transform: translateY(-50%);
@@ -925,7 +925,7 @@ XIX. ADS
 MISC TEMPLATE EDITS
 **************/
 #content-header img {
-  margin-top: -1px; }
+  margin-bottom: 10rem; }
 
 /**************
 TOP NAV
@@ -935,7 +935,7 @@ TOP NAV
   float: left;
   height: 70px;
   height: 50px;
-  background-color: #0d4974;
+  background-color: #777;
   padding-top: 20px;
   width: 25%; }
   #parts h1 {
@@ -955,15 +955,16 @@ TOP NAV
     #parts {
       display: inline-block; } }
 
-#top-nav-wrapper, .attr-wrapper, #bottom-nav-wrapper {
+#top-nav-wrapper, .attr-wrapper {
   width: 100%;
   height: 60px;
   display: inline-block;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
-  #top-nav-wrapper .top-face, .attr-wrapper .top-face, #bottom-nav-wrapper .top-face, #top-nav-wrapper .attr-wrapper .quote-face, .attr-wrapper #top-nav-wrapper .quote-face, .attr-wrapper .quote-face, #bottom-nav-wrapper .attr-wrapper .quote-face, .attr-wrapper #bottom-nav-wrapper .quote-face, #bottom-nav-wrapper .face {
+  backface-visibility: hidden;
+  margin-bottom: 3rem; }
+  #top-nav-wrapper .top-face, .attr-wrapper .top-face, #top-nav-wrapper .attr-wrapper .quote-face, .attr-wrapper #top-nav-wrapper .quote-face, .attr-wrapper .quote-face {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -977,13 +978,13 @@ TOP NAV
     backface-visibility: hidden;
     z-index: 2; }
     @media only screen and (max-width: 678px) {
-      #top-nav-wrapper .top-face .part, .attr-wrapper .top-face .part, #bottom-nav-wrapper .top-face .part, #top-nav-wrapper .attr-wrapper .quote-face .part, .attr-wrapper #top-nav-wrapper .quote-face .part, .attr-wrapper .quote-face .part, #bottom-nav-wrapper .attr-wrapper .quote-face .part, .attr-wrapper #bottom-nav-wrapper .quote-face .part, #bottom-nav-wrapper .face .part {
+      #top-nav-wrapper .top-face .part, .attr-wrapper .top-face .part, #top-nav-wrapper .attr-wrapper .quote-face .part, .attr-wrapper #top-nav-wrapper .quote-face .part, .attr-wrapper .quote-face .part {
         display: none; } }
-    #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1, #bottom-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #bottom-nav-wrapper .quote-face h1, #bottom-nav-wrapper .face h1 {
+    #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1 {
       font-family: "Kanit";
       font-weight: 800;
       font-size: 3rem;
-      color: #c9c9c9;
+      color: white;
       text-transform: uppercase;
       letter-spacing: 0.2rem;
       position: absolute;
@@ -992,10 +993,10 @@ TOP NAV
       right: 0;
       text-align: center; }
       @media only screen and (max-width: 940px) {
-        #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #bottom-nav-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1, #bottom-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #bottom-nav-wrapper .quote-face h1, #bottom-nav-wrapper .face h1 {
+        #top-nav-wrapper .top-face h1, .attr-wrapper .top-face h1, #top-nav-wrapper .attr-wrapper .quote-face h1, .attr-wrapper #top-nav-wrapper .quote-face h1, .attr-wrapper .quote-face h1 {
           font-size: 2.5rem;
           line-height: 2.1rem; } }
-    #top-nav-wrapper .top-face h2, .attr-wrapper .top-face h2, #bottom-nav-wrapper .top-face h2, #top-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #top-nav-wrapper .quote-face h2, .attr-wrapper .quote-face h2, #bottom-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #bottom-nav-wrapper .quote-face h2, #bottom-nav-wrapper .face h2 {
+    #top-nav-wrapper .top-face h2, .attr-wrapper .top-face h2, #top-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #top-nav-wrapper .quote-face h2, .attr-wrapper .quote-face h2 {
       font-family: "Kanit";
       font-weight: 100;
       font-size: 3rem;
@@ -1010,37 +1011,37 @@ TOP NAV
       right: 0;
       text-align: center; }
       @media only screen and (max-width: 678px) {
-        #top-nav-wrapper .top-face h2, .attr-wrapper .top-face h2, #bottom-nav-wrapper .top-face h2, #top-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #top-nav-wrapper .quote-face h2, .attr-wrapper .quote-face h2, #bottom-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #bottom-nav-wrapper .quote-face h2, #bottom-nav-wrapper .face h2 {
+        #top-nav-wrapper .top-face h2, .attr-wrapper .top-face h2, #top-nav-wrapper .attr-wrapper .quote-face h2, .attr-wrapper #top-nav-wrapper .quote-face h2, .attr-wrapper .quote-face h2 {
           line-height: 3.2rem;
           padding: 2rem; } }
-    #top-nav-wrapper .top-face.hover, .attr-wrapper .top-face.hover, #bottom-nav-wrapper .top-face.hover, #top-nav-wrapper .attr-wrapper .hover.quote-face, .attr-wrapper #top-nav-wrapper .hover.quote-face, .attr-wrapper .hover.quote-face, #bottom-nav-wrapper .attr-wrapper .hover.quote-face, .attr-wrapper #bottom-nav-wrapper .hover.quote-face, #bottom-nav-wrapper .hover.face {
+    #top-nav-wrapper .top-face.hover, .attr-wrapper .top-face.hover, #top-nav-wrapper .attr-wrapper .hover.quote-face, .attr-wrapper #top-nav-wrapper .hover.quote-face, .attr-wrapper .hover.quote-face {
       box-shadow: inset 0px -30px 60px rgba(0, 0, 0, 0.2);
       -webkit-transform: rotateX(90deg) translateZ(30px);
       transform: rotateX(90deg) translateZ(30px);
       overflow: hidden; }
-      #top-nav-wrapper .top-face.hover .nav-hed2, .attr-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .top-face.hover .nav-hed2, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed2, .attr-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .hover.face .nav-hed2 {
-        background-color: #fec44f; }
-      #top-nav-wrapper .top-face.hover .nav-hed3, .attr-wrapper .top-face.hover .nav-hed3, #bottom-nav-wrapper .top-face.hover .nav-hed3, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed3, .attr-wrapper .hover.quote-face .nav-hed3, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed3, #bottom-nav-wrapper .hover.face .nav-hed3 {
-        background: #fec44f; }
-      #top-nav-wrapper .top-face.hover .nav-hed4, .attr-wrapper .top-face.hover .nav-hed4, #bottom-nav-wrapper .top-face.hover .nav-hed4, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed4, .attr-wrapper .hover.quote-face .nav-hed4, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed4, #bottom-nav-wrapper .hover.face .nav-hed4 {
-        background: #fec44f; }
-  #top-nav-wrapper .active, .attr-wrapper .active, #bottom-nav-wrapper .active {
-    background: #e34e36; }
-    #top-nav-wrapper .active h1, .attr-wrapper .active h1, #bottom-nav-wrapper .active h1 {
+      #top-nav-wrapper .top-face.hover .nav-hed2, .attr-wrapper .top-face.hover .nav-hed2, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed2, .attr-wrapper .hover.quote-face .nav-hed2 {
+        background-color: white; }
+      #top-nav-wrapper .top-face.hover .nav-hed3, .attr-wrapper .top-face.hover .nav-hed3, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed3, .attr-wrapper .hover.quote-face .nav-hed3 {
+        background: white; }
+      #top-nav-wrapper .top-face.hover .nav-hed4, .attr-wrapper .top-face.hover .nav-hed4, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed4, .attr-wrapper .hover.quote-face .nav-hed4 {
+        background: white; }
+  #top-nav-wrapper .active, .attr-wrapper .active {
+    background: #777; }
+    #top-nav-wrapper .active h1, .attr-wrapper .active h1 {
       color: white; }
   @media only screen and (max-width: 678px) {
-    #top-nav-wrapper, .attr-wrapper, #bottom-nav-wrapper {
+    #top-nav-wrapper, .attr-wrapper {
       height: 50px;
       width: 75%; } }
 
-.nav-hed, #top-nav-wrapper .top-face.hover .nav-hed2, .attr-wrapper .top-face.hover .nav-hed2, #bottom-nav-wrapper .top-face.hover .nav-hed2, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed2, .attr-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed2, #bottom-nav-wrapper .hover.face .nav-hed2, #top-nav-wrapper .top-face.hover .nav-hed3, .attr-wrapper .top-face.hover .nav-hed3, #bottom-nav-wrapper .top-face.hover .nav-hed3, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed3, .attr-wrapper .hover.quote-face .nav-hed3, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed3, #bottom-nav-wrapper .hover.face .nav-hed3, #top-nav-wrapper .top-face.hover .nav-hed4, .attr-wrapper .top-face.hover .nav-hed4, #bottom-nav-wrapper .top-face.hover .nav-hed4, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed4, .attr-wrapper .hover.quote-face .nav-hed4, #bottom-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #bottom-nav-wrapper .hover.quote-face .nav-hed4, #bottom-nav-wrapper .hover.face .nav-hed4, #bottom-nav-wrapper .face.hover .read-more1, #bottom-nav-wrapper .face.hover .read-more2, #bottom-nav-wrapper .face.hover .read-more3 {
+.nav-hed, #top-nav-wrapper .top-face.hover .nav-hed2, .attr-wrapper .top-face.hover .nav-hed2, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed2, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed2, .attr-wrapper .hover.quote-face .nav-hed2, #top-nav-wrapper .top-face.hover .nav-hed3, .attr-wrapper .top-face.hover .nav-hed3, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed3, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed3, .attr-wrapper .hover.quote-face .nav-hed3, #top-nav-wrapper .top-face.hover .nav-hed4, .attr-wrapper .top-face.hover .nav-hed4, #top-nav-wrapper .attr-wrapper .hover.quote-face .nav-hed4, .attr-wrapper #top-nav-wrapper .hover.quote-face .nav-hed4, .attr-wrapper .hover.quote-face .nav-hed4 {
   width: 100%;
   height: 100%;
   color: #fff;
   padding: 15px 30px;
   box-sizing: border-box; }
 
-.trigger-top, .trigger-quote, .trigger-bottom {
+.trigger-top, .trigger-quote {
   width: 25%;
   float: left;
   position: relative;
@@ -1051,17 +1052,8 @@ TOP NAV
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
   @media only screen and (max-width: 678px) {
-    .trigger-top, .trigger-quote, .trigger-bottom {
+    .trigger-top, .trigger-quote {
       width: calc(100% / 4); } }
-
-.trigger-top:hover .feature, .trigger-quote:hover .feature, .trigger-bottom:hover .feature, .trigger-top:hover .trigger-quote, .trigger-quote:hover .trigger-quote, .trigger-bottom:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
-  -webkit-transform: rotateX(-90deg) translateZ(0);
-  transform: rotateX(-90deg) translateZ(0);
-  bottom: 10px; }
-  @media only screen and (max-width: 678px) {
-    .trigger-top:hover .feature, .trigger-quote:hover .feature, .trigger-bottom:hover .feature, .trigger-top:hover .trigger-quote, .trigger-quote:hover .trigger-quote, .trigger-bottom:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
-      -webkit-transform: none;
-      transform: none; } }
 
 .feature, .trigger-quote {
   width: 100%;
@@ -1079,7 +1071,9 @@ TOP NAV
   transform: rotateX(0deg) translateZ(0); }
 
 .top-nav {
-  background: #0d4974; }
+  background: #c9c9c9;
+  border-right: 8px white solid;
+  border-left: 8px white solid; }
 
 /**************
 HEADER AND DECK
@@ -1088,7 +1082,7 @@ HEADER AND DECK
   font-family: "Kanit";
   font-weight: 800;
   font-size: 10rem;
-  color: #e34e36;
+  color: #9b2d51;
   text-transform: uppercase;
   letter-spacing: 0.02rem;
   line-height: 9.6rem; }
@@ -1110,19 +1104,11 @@ HEADER AND DECK
       font-size: 3rem;
       line-height: 3.6rem; } }
 
-.byline-block {
-  font-family: "Kanit";
-  font-weight: 300;
-  font-size: auto;
-  color: auto;
-  text-transform: auto;
-  font-style: italic; }
-
 .dropcap {
   font-family: "Kanit";
   font-weight: 300;
   font-size: auto;
-  color: #1266a2;
+  color: #9b2d51;
   text-transform: uppercase; }
 
 /**************
@@ -1130,7 +1116,7 @@ STORY CONTENT
 **************/
 .quote-wrapper1 {
   margin: 4rem 0;
-  background-color: #0d4974;
+  background-color: #9b2d51;
   height: 600px;
   position: relative;
   padding: 0px; }
@@ -1168,7 +1154,7 @@ STORY CONTENT
         margin-right: auto; } }
 
 .quotes {
-  color: #e34e36; }
+  color: white; }
 
 .attr-wrapper {
   display: block;
@@ -1184,10 +1170,10 @@ STORY CONTENT
   .attr-wrapper .quote-face {
     -webkit-transform: rotateX(0deg) translateZ(45px);
     transform: rotateX(0deg) translateZ(45px);
-    background: #fec44f; }
+    background: white; }
     @media only screen and (max-width: 678px) {
       .attr-wrapper .quote-face {
-        background: #e34e36;
+        background: white;
         -webkit-transform: rotateX(0deg) translateZ(25px);
         transform: rotateX(0deg) translateZ(25px); } }
     .attr-wrapper .quote-face .quote-mob {
@@ -1198,9 +1184,9 @@ STORY CONTENT
           display: block; } }
     .attr-wrapper .quote-face h5, .attr-wrapper .quote-face .quote-mob {
       font-family: "Kanit";
-      font-weight: 100;
+      font-weight: 200;
       font-size: 4rem;
-      color: white;
+      color: #9b2d51;
       text-transform: auto;
       font-style: italic;
       line-height: 3.6rem;
@@ -1215,11 +1201,11 @@ STORY CONTENT
         .attr-wrapper .quote-face h5, .attr-wrapper .quote-face .quote-mob {
           font-size: 2.6rem; } }
     .attr-wrapper .quote-face.hover {
-      box-shadow: inset 0px -30px 400px rgba(0, 0, 0, 0.2);
+      box-shadow: none;
       -webkit-transform: rotateX(-90deg) translateZ(45px);
       transform: rotateX(-90deg) translateZ(45px);
       overflow: hidden;
-      background-color: #e34e36; }
+      background-color: white; }
       @media only screen and (max-width: 678px) {
         .attr-wrapper .quote-face.hover {
           -webkit-transform: rotateX(-90deg) translateZ(25px);
@@ -1249,120 +1235,77 @@ STORY CONTENT
 BOTTOM NAV
 **************/
 #bottom-nav-wrapper {
-  display: block;
+  margin-top: 60px; }
+
+.bottom-nav {
   height: 400px;
-  margin-bottom: 4rem; }
-  #bottom-nav-wrapper #bottom-nav1 {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav1.jpg");
-    background-size: cover; }
-  #bottom-nav-wrapper #bottom-nav2 {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav2.jpg");
-    background-size: cover; }
-  #bottom-nav-wrapper #bottom-nav3 {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav3.jpg");
-    background-size: cover; }
-  #bottom-nav-wrapper .face {
-    -webkit-transform: rotateX(0deg) translateZ(200px);
-    transform: rotateX(0deg) translateZ(200px); }
-    @media only screen and (max-width: 678px) {
-      #bottom-nav-wrapper .face {
-        -webkit-transform: rotateX(0deg) translateZ(100px);
-        transform: rotateX(0deg) translateZ(100px); } }
-    #bottom-nav-wrapper .face h1 {
-      font-family: "Kanit";
-      font-weight: 100;
-      font-size: 4rem;
-      color: white;
-      text-transform: none;
-      font-style: italic;
-      line-height: 4rem;
-      padding: 60px;
-      position: absolute;
-      top: 55%;
-      left: 0;
-      right: 0;
-      text-align: center; }
-      @media only screen and (max-width: 1464px) {
-        #bottom-nav-wrapper .face h1 {
-          font-size: 3.5rem;
-          width: 90%;
-          padding: 0;
-          margin-left: auto;
-          margin-right: auto; } }
-      @media only screen and (max-width: 778px) {
-        #bottom-nav-wrapper .face h1 {
-          top: 60%; } }
-      @media only screen and (max-width: 678px) {
-        #bottom-nav-wrapper .face h1 {
-          font-size: 3rem;
-          line-height: 3.6rem;
-          top: 60%;
-          padding: 20px; } }
-    #bottom-nav-wrapper .face h2 {
-      font-family: "Kanit";
-      font-weight: 800;
-      font-size: 3rem;
-      color: white;
-      text-transform: uppercase;
-      font-style: normal;
-      letter-spacing: 0.2rem;
-      padding: 60px;
-      position: absolute;
-      top: 35%;
-      left: 0;
-      right: 0;
-      text-align: center; }
-      @media only screen and (max-width: 778px) {
-        #bottom-nav-wrapper .face h2 {
-          top: 30%; } }
-      @media only screen and (max-width: 678px) {
-        #bottom-nav-wrapper .face h2 {
-          font-size: 2.5rem; } }
-    #bottom-nav-wrapper .face h3 {
-      font-family: "Kanit";
-      font-weight: auto;
-      font-size: 5rem;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      padding: 60px;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      text-align: center; }
-      @media only screen and (max-width: 678px) {
-        #bottom-nav-wrapper .face h3 {
-          padding: 20px;
-          font-size: 4rem; } }
-    #bottom-nav-wrapper .face.hover {
-      box-shadow: inset 0px -30px 400px rgba(0, 0, 0, 0.2);
-      -webkit-transform: rotateX(-90deg) translateZ(200px);
-      transform: rotateX(-90deg) translateZ(200px);
-      overflow: hidden; }
-      #bottom-nav-wrapper .face.hover .read-more1 {
-        background: #0d4974; }
-      #bottom-nav-wrapper .face.hover .read-more2 {
-        background: #e34e36; }
-      #bottom-nav-wrapper .face.hover .read-more3 {
-        background: #fec44f; }
-      @media only screen and (max-width: 678px) {
-        #bottom-nav-wrapper .face.hover {
-          -webkit-transform: rotateX(-90deg) translateZ(100px);
-          transform: rotateX(-90deg) translateZ(100px); } }
+  background: #0d4974;
+  cursor: pointer; }
 
-.trigger-bottom {
-  width: calc(100% / 3); }
-  @media only screen and (max-width: 678px) {
-    .trigger-bottom {
-      width: 100%;
-      height: 200px; } }
+.bottom-nav:hover {
+  background: #0d4974 !important; }
 
-.trigger-bottom:hover .feature, .trigger-bottom:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
-  -webkit-transform: rotateX(90deg) translateZ(0);
-  transform: rotateX(90deg) translateZ(0);
-  bottom: 10px; }
-  @media only screen and (max-width: 678px) {
-    .trigger-bottom:hover .feature, .trigger-bottom:hover .trigger-quote, .stick .feature, .stick .trigger-quote {
-      -webkit-transform: none;
-      transform: none; } }
+.bottom-nav:hover h2 {
+  color: white; }
+
+.bottom-nav h1 {
+  font-family: "Kanit";
+  font-weight: 100;
+  font-size: auto;
+  color: white;
+  text-transform: auto;
+  font-style: italic;
+  padding: 60px;
+  position: absolute;
+  top: 55%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -ms-transform: translateY(-50%);
+  /* IE 9 */
+  -webkit-transform: translateY(-50%);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-50%); }
+
+@media only screen and (max-width: 678px) {
+  .bottom-nav h1 {
+    padding: 20px; } }
+
+.bottom-nav h2 {
+  font-family: "Kanit";
+  font-weight: 800;
+  font-size: auto;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 60px;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -ms-transform: translateY(-50%);
+  /* IE 9 */
+  -webkit-transform: translateY(-50%);
+  /* Chrome, Safari, Opera */
+  transform: translateY(-50%); }
+
+@media only screen and (max-width: 678px) {
+  .bottom-nav h2 {
+    top: 25%; } }
+
+@media only screen and (max-width: 678px) {
+  .bottom-nav {
+    height: 200px; } }
+
+#bottom-nav1 {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav1.jpg");
+  background-size: cover; }
+
+#bottom-nav2 {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav2.jpg");
+  background-size: cover; }
+
+#bottom-nav3 {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%), url("../images/_bottom-nav3.jpg");
+  background-size: cover; }
