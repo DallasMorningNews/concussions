@@ -1,28 +1,7 @@
 $(document).ready(function() {
 
 	//custom scripting goes here
-	var windowSize = $(window).width();
-
-
-
-	// Makes bottom nav slide up and down
-
-		// get initial position of the element
-		var flipAttr = $('.quote-wrapper1').offset().top;
-
-		// assign scroll event listener
-		$(window).scroll(function() {
-
-			if (windowSize > 678) {
-				var currentScroll = $(window).scrollTop() + ($(window).height() / 4); // get current position
-
-			    if (currentScroll >= flipAttr) {
-			        $(".trigger-quote").addClass("flip");
-			    }
-			}
-		});
-
-
+	
 	// injecting current year into footer
 	// DO NOT DELETE
 
