@@ -12,7 +12,7 @@
 
 $primary: #9b2d51;
 $secondary: darken(#ccc, 10%);
-$tertiary: white;
+$tertiary: $chartYellow;
 
 $normal: #323232;
 $light: #ccc;
@@ -53,19 +53,32 @@ MISC TEMPLATE EDITS
     padding-right: 1rem;
 }
 
+.credits {
+    border-bottom: none;
+}
+
 /**************
 TOP NAV
 **************/
 
 #top-nav-wrapper {
     width: 100%;
-    margin: 60px auto 40px auto;
+    margin: 60px auto 20px auto;
+
+    @media only screen and (max-width: 678px) {
+        margin-bottom: 2rem;
+        margin-top: 0px;
+    }
 
     h3 {
-        @include headline("Kanit", 800, 2.5rem, $primary, normal);
+        @include headline("Kanit", auto, 2.5rem, $primary, normal);
         letter-spacing: 0.1rem;
-        line-height: 3rem;
+        line-height: 2.5rem;
         margin-bottom: 1rem;
+
+        @media only screen and (max-width: 678px) {
+            font-size: 2rem;
+        }
     }
 
     li {
@@ -77,6 +90,22 @@ TOP NAV
         border-right: 4px solid white;
         border-left: 4px solid white;
         cursor: pointer;
+        padding-top: 8px;
+
+        &:hover {
+            background: $chartYellow;
+        }
+
+        @media only screen and (max-width: 678px) {
+            height: 30px;
+            padding-top: 3px;
+        }
+
+        .nav-desk {
+            @media only screen and (max-width: 678px) {
+                display: none;
+            }
+        }
 
         &.active {
             background-color: $primary;
@@ -84,8 +113,6 @@ TOP NAV
 
         h2 {
             @include headline("Kanit", 100, 2rem, white, auto);
-            padding-top: 8px;
-
             line-height: 2.4rem;
         }
     }
@@ -98,11 +125,12 @@ HEADER AND DECK
 #story-head {
 	h1 {
         margin-top: 4rem;
-		@include headline("Kanit", 800, 10rem, $primary, uppercase);
+		@include headline("Kanit", auto, 10rem, $primary, uppercase);
 		letter-spacing: 0.02rem;
 		line-height: 9.6rem;
 
         @media only screen and (max-width: 678px) {
+            margin-top: 2rem;
             font-size: 6rem;
             line-height: 6rem;
         }
@@ -149,7 +177,7 @@ STORY CONTENT
     p {
         @include headline("Kanit", auto, 5rem, white, auto);
         line-height: 6rem;
-        letter-spacing: 0.3rem;
+        letter-spacing: 0.2rem;
         width: 80%;
         margin: 0 auto;
         margin-bottom: 3rem;
@@ -190,73 +218,61 @@ BOTTOM NAV
 **************/
 
 #bottom-nav-wrapper {
-  margin-top: 60px;
-  width: 90%;
-  max-width: 650px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
 }
+
 .bottom-nav {
-  height: 400px;
-  background: #0d4974;
-  cursor: pointer;
-}
-.bottom-nav:hover {
-    background: #0d4974 !important;
-}
-.bottom-nav:hover h2 {
-  color: white;
-}
-.bottom-nav h1 {
-    font-family: "Kanit";
-    font-weight: 100;
-    font-size: auto;
-    color: white;
-    text-transform: auto;
-    font-style: italic;
-    padding: 60px;
-    position: absolute;
-    top: 55%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    @extend .transform;
+    height: 200px;
+    background: $primary;
+    width: calc(100% / 3);
+    display: inline-block;
+    margin: -1px;
+    border-right: 4px solid white;
+    border-left: 4px solid white;
+    position: relative;
+    cursor: pointer;
+
+    .text-wrapper {
+        position: absolute;
+        top: 50%;
+        @extend .transform;
+    }
+
+    &:hover {
+        background: $tertiary;
+    }
 
     @media only screen and (max-width: 678px) {
-        .bottom-nav h1 {
-            padding: 20px;
-        }
+        width: 100%;
+        border: none;
+        border-bottom: 8px solid white;
     }
-}
-.bottom-nav h2 {
-    font-family: "Kanit";
-    font-weight: 800;
-    font-size: auto;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    padding: 60px;
-    position: absolute;
-    top: 35%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    @extend .transform;
-}
-    @media only screen and (max-width: 678px) {
-      .bottom-nav h2 {
-        top: 25%;
+
+    h1 {
+        @include headline("Kanit", 100, 3rem, white, auto);
+        font-style: italic;
+        text-align: center;
+        line-height: 3.6rem;
+        margin-bottom: 0;
     }
-}
-  @media only screen and (max-width: 678px) {
-    .bottom-nav {
-      height: 200px;
-  }
+
+    h2 {
+        @include headline("Kanit", auto, 2rem, white, uppercase);
+        text-align: center;
+        letter-spacing: 0.2rem;
+        line-height: 2.4rem;
+        margin-bottom: 1rem;
+    }
 }
 
-@each $nav-button in $nav-buttons {
-	#bottom-#{$nav-button} {
-		background-image:
-			linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
-			url("../images/_bottom-#{$nav-button}.jpg");
-		background-size: cover;
-	}
-}
+//
+// @each $nav-button in $nav-buttons {
+// 	#bottom-#{$nav-button} {
+// 		background-image:
+// 			linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 0%),
+// 			url("../images/_bottom-#{$nav-button}.jpg");
+// 		background-size: cover;
+// 	}
+// }
