@@ -946,7 +946,7 @@ TOP NAV
       margin-top: 0px; } }
   #top-nav-wrapper h3 {
     font-family: "Kanit";
-    font-weight: auto;
+    font-weight: 800;
     font-size: 2.5rem;
     color: #9b2d51;
     text-transform: normal;
@@ -991,7 +991,7 @@ HEADER AND DECK
 #story-head h1 {
   margin-top: 4rem;
   font-family: "Kanit";
-  font-weight: auto;
+  font-weight: 800;
   font-size: 10rem;
   color: #9b2d51;
   text-transform: uppercase;
@@ -1018,7 +1018,7 @@ HEADER AND DECK
 
 .dropcap {
   font-family: "Kanit";
-  font-weight: 300;
+  font-weight: 800;
   font-size: auto;
   color: #9b2d51;
   text-transform: uppercase; }
@@ -1043,7 +1043,7 @@ STORY CONTENT
   top: 50%; }
   .quote-wrapper2 p {
     font-family: "Kanit";
-    font-weight: auto;
+    font-weight: 600;
     font-size: 5rem;
     color: white;
     text-transform: auto;
@@ -1116,7 +1116,7 @@ BOTTOM NAV
     margin-bottom: 0; }
   .bottom-nav h2 {
     font-family: "Kanit";
-    font-weight: auto;
+    font-weight: 600;
     font-size: 2rem;
     color: white;
     text-transform: uppercase;
@@ -1124,3 +1124,21 @@ BOTTOM NAV
     letter-spacing: 0.2rem;
     line-height: 2.4rem;
     margin-bottom: 1rem; }
+
+#bottom-nav1 {
+  background-image: url("../images/_bottom-nav2.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain; }
+
+#bottom-nav2 {
+  background-image: url("../images/_bottom-nav3.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+#bottom-nav3 {
+  background-image: url("../images/_bottom-nav4.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain; }
