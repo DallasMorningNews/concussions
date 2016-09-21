@@ -909,10 +909,10 @@ XIX. ADS
     padding: 2.4rem 0; } }
 
 #search-tool {
-  max-width: 750px;
+  max-width: 650px;
   margin: 30px auto;
   max-height: 600px;
-  overflow-y: scroll; }
+  overflow-y: auto; }
   @media (max-width: 599px) {
     #search-tool {
       padding: 20px 0 5px;
@@ -920,7 +920,7 @@ XIX. ADS
       border-bottom: 2px solid #ebebeb; } }
   @media (min-width: 600px) {
     #search-tool {
-      background-color: #f5f5f5;
+      background: #9b2d51;
       padding: 25px 30px; } }
   #search-tool #search-results {
     margin-top: 20px; }
@@ -928,7 +928,7 @@ XIX. ADS
       margin-top: 20px;
       background-color: #fff;
       border: 1px solid #ebebeb;
-      padding: 10px 20px; }
+      padding: 20px 20px; }
       #search-tool #search-results > div table {
         margin-bottom: 0; }
   #search-tool input {
@@ -939,10 +939,24 @@ XIX. ADS
     margin-top: 0;
     font-family: "Gotham A", "Gotham B", Arial, sans-serif;
     font-weight: bold;
-    color: #424242;
-    font-size: 22px; }
+    color: white;
+    font-size: 2rem;
+    line-height: 2.4rem; }
+  #search-tool h3 {
+    font-family: "Gotham A", "Gotham B", Arial, sans-serif;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: bold; }
+  #search-tool h4 {
+    font-family: "Gotham A", "Gotham B", Arial, sans-serif;
+    font-size: 1.4rem;
+    padding-top: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem; }
   #search-tool p, #search-tool table, #search-tool input {
-    font-family: "Gotham A", "Gotham B", Arial, sans-serif; }
+    font-family: "Gotham A", "Gotham B", Arial, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.8rem; }
   #search-tool th {
     background-color: #f5f5f5; }
 

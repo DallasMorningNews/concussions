@@ -1,5 +1,7 @@
+$primary: #9b2d51;
+
 #search-tool {
-  max-width: 750px;
+  max-width: 650px;
   margin: 30px auto;
   @media(max-width: 599px) {
     padding: 20px 0 5px;
@@ -7,11 +9,12 @@
     border-bottom: 2px solid $black235;
   }
   @media(min-width: 600px) {
-    background-color: $black245;
+    // background-color: $black245;
+    background: $primary;
     padding: 25px 30px;
   }
   max-height: 600px;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   #search-results {
     margin-top: 20px;
@@ -20,7 +23,7 @@
       margin-top: 20px;
       background-color: #fff;
       border: 1px solid $black235;
-      padding: 10px 20px;
+      padding: 20px 20px;
 
       table {
         margin-bottom: 0;
@@ -34,18 +37,36 @@
     border: 1px solid $black235;
   }
 
-  // Tool labe ("Search concussions and helmet ...")
+  // Tool labek ("Search concussions and helmet ...")
   h2 {
     margin-top: 0;
     font-family: $sans;
     font-weight: bold;
-    color: $black66;
-    font-size: 22px;
+    color: white;
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h3 {
+      font-family: $sans;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      font-weight: bold;
+  }
+
+  h4 {
+      font-family: $sans;
+      font-size: 1.4rem;
+      padding-top: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
   }
 
   // All search results "data" - ratings, district, notes, etc.
   p, table, input {
     font-family: $sans;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
   }
 
   th {
