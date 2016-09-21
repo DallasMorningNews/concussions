@@ -5,82 +5,69 @@ TDMN = {};
   'use strict';
 
   // Data models
-  var searchQueryModel = new Backbone.Model();
-
-  var SchoolsCollection = Backbone.Collection.extend({
-    highlight: function(id) {
-      this.trigger('highlight', this.get(id));
-    }
-  });
-
-  TDMN.schoolsCollection = new SchoolsCollection();
+  TDMN.schoolsCollection = new Backbone.Collection();
   TDMN.helmetsCollection = new Backbone.Collection();
 
 
   // Views
   var SearchBoxView = Marionette.ItemView.extend({
-    constructor: function() {
-      this.debouncedHandleQuery = _.debounce(this.handleQuery, 200);
-      Marionette.ItemView.apply(this, arguments);
-    },
-
-    events: {
-      'input input': 'debouncedHandleQuery'
+    collectionEvents: {
+      reset: 'render'
     },
 
     template: '#tpl-search-box',
 
-    handleQuery: function(evt) {
-      this.model.set('q', evt.currentTarget.value);
+    onRender: function() {
+      var self = this;
+
+      this.$('#search-input').selectize({
+        options: this.collection.toJSON(),
+        maxItems: 1,
+        allowEmptyOption: true,
+        placeholder: 'Enter a school name to search',
+        labelField: 'name',
+        searchField: 'name',
+        sortField: 'name',
+        valueField: 'id',
+        onChange: function(value) {
+          self.collection.trigger('select', value);
+        }
+      });
     }
   });
 
   var searchBox = new SearchBoxView({
     el: '#search-box',
 
-    model: searchQueryModel
+    collection: TDMN.schoolsCollection,
   });
-
-  searchBox.render();
 
 
   var SchoolSearchView = Marionette.CollectionView.extend({
     el: '#search-results',
 
     collectionEvents: {
-      reset: 'render'
+      select: 'select'
     },
 
     childView: Marionette.ItemView.extend({
       template: '#tpl-search-results'
     }),
 
-    _searchQuery: '',
+    _selected: null,
 
-    search: function(q) {
-      this._searchQuery = q.toLowerCase();
+    select: function(id) {
+      this._selected = Number(id);
       this.render();
     },
 
     filter: function(child, index, collection) {
-      if(this._searchQuery === '') return false;
-
-      return child.get('name').toLowerCase().indexOf(this._searchQuery) !== -1;
+      return child.id === this._selected;
     }
   });
 
   var schoolSearchView = new SchoolSearchView({
     collection: TDMN.schoolsCollection
-  });
-
-
-  // Wiring
-  searchQueryModel.on('change:q', function(searchModel, query) {
-    schoolSearchView.search(query);
-  });
-
-  TDMN.schoolsCollection.on('highlight', function(highlightedSchool) {
-    searchQueryModel.set('q', highlightedSchool.get('name'));
   });
 
 
