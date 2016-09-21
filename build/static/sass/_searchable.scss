@@ -1,75 +1,79 @@
+@import '../vendor/selectize/dist/css/selectize';
 $primary: #9b2d51;
 
+.mobile-width {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #search-tool {
-  max-width: 650px;
-  margin: 30px auto;
-  @media(max-width: 599px) {
-    padding: 20px 0 5px;
-    border-top: 2px solid $black235;
-    border-bottom: 2px solid $black235;
-  }
-  @media(min-width: 600px) {
-    // background-color: $black245;
+    max-width: 650px;
+    margin: 30px auto;
     background: $primary;
-    padding: 25px 30px;
-  }
-  max-height: 600px;
-  overflow-y: auto;
-
-  #search-results {
-    margin-top: 20px;
-
-    > div {
-      margin-top: 20px;
-      background-color: #fff;
-      border: 1px solid $black235;
-      padding: 20px 20px;
-
-      table {
-        margin-bottom: 0;
-      }
+    @media(max-width: 679px) {
+        padding: 20px 20px 20px 20px;
+        border-top: 2px solid $black235;
+        border-bottom: 2px solid $black235;
     }
-  }
-
-  input {
-    margin-top: 8px;
-    border-radius: 0;
-    border: 1px solid $black235;
-  }
-
-  // Tool labek ("Search concussions and helmet ...")
-  h2 {
-    margin-top: 0;
-    font-family: $sans;
-    font-weight: bold;
-    color: white;
-    font-size: 2rem;
-    line-height: 2.4rem;
-  }
-
-  h3 {
-      font-family: $sans;
-      font-size: 2rem;
-      line-height: 2.4rem;
-      font-weight: bold;
-  }
-
-  h4 {
-      font-family: $sans;
-      font-size: 1.4rem;
-      padding-top: 2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-  }
-
-  // All search results "data" - ratings, district, notes, etc.
-  p, table, input {
-    font-family: $sans;
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-  }
-
-  th {
-    background-color: $black245;
-  }
+    @media(min-width: 600px) {
+        // background-color: $black245;
+        padding: 25px 30px;
+    }
+    #search-results {
+        margin-top: 20px;
+        > div {
+            margin-top: 20px;
+            background-color: #fff;
+            border: 1px solid $black235;
+            padding: 20px;
+            table {
+                margin-bottom: 0;
+            }
+        }
+    }
+    input {
+        margin-top: 8px;
+        border-radius: 0;
+        border: 1px solid $black235;
+    }
+    .item {
+        font-family: $sans;
+    }
+    .responsive-table {
+        overflow-x: auto;
+    }
+    // Tool label ("Search concussions and helmet ...")
+    h2 {
+        margin-top: 0;
+        font-family: $sans;
+        font-weight: bold;
+        color: white;
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+    h3 {
+        font-family: $sans;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        font-weight: bold;
+    }
+    h4 {
+        font-family: $sans;
+        font-size: 1.4rem;
+        padding-top: 2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    // All search results "data" - ratings, district, notes, etc.
+    input,
+    p,
+    table {
+        font-family: $sans;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+    th {
+        background-color: $black245;
+    }
 }

@@ -2,6 +2,7 @@
   "name": "concussions",
   "private": true,
   "dependencies": {
-    "backbone.marionette": "marionette#^2.4.7"
+    "backbone.marionette": "marionette#^2.4.7",
+    "selectize": "^0.12.3"
   }
 }

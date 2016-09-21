@@ -60,6 +60,9 @@
 	</script>
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="js/d3tip.js"></script>
+<script src="js/scatter.js"></script>
 
 <script type="text/javascript">
 
@@ -278,14 +281,14 @@ googletag.enableServices();
 
     <p>Reducing the head contact might be more important than any possible helmet innovation. Rockwall players wear the five-star rated Schutt Vengeance helmets, but coach Rodney Webb said the helmet doesn&rsquo;t matter as much what the player does with it.</p>
 
-    <div id="search-tool">
+    <div id="search-tool" class="clearFix">
   <h2>Search concussions and helmet inventory by school</h2>
   <div id="search-box"></div>
   <div id="search-results"></div>
 </div>
 
 <script id="tpl-search-box" type="text/template">
-  <input class="form-control input-lg" type="text" placeholder="Enter a school name to search"></input>
+  <div id="search-input"></div>
 </script>
 
 <script id="tpl-search-results" type="text/template">
@@ -298,64 +301,69 @@ googletag.enableServices();
     return concussion.school_year * -1;
   }); %>
   <h4>Concussions</h4>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>School year</th>
-        <th>Senior</th>
-        <th>Junior</th>
-        <th>Sophomore</th>
-        <th>Freshman</th>
-        <th>Grade unknown</th>
-        <th><strong>Total</strong></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% _.each(concussions, function(concussion) { %>
-        <tr>
-          <td><%- concussion.school_year %></td>
-          <td><%- concussion.senior %></td>
-          <td><%- concussion.junior %></td>
-          <td><%- concussion.sophomore %></td>
-          <td><%- concussion.freshman %></td>
-          <td><%- concussion.unknown %></td>
-          <td><strong><%- (concussion.senior + concussion.junior + concussion.sophomore + concussion.freshman + concussion.unknown) %></strong></td>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
+  <div class="responsive-table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>School year</th>
+            <th>Senior</th>
+            <th>Junior</th>
+            <th>Sophomore</th>
+            <th>Freshman</th>
+            <th>Grade unknown</th>
+            <th><strong>Total</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(concussions, function(concussion) { %>
+            <tr>
+              <td><%- concussion.school_year %></td>
+              <td><%- concussion.senior %></td>
+              <td><%- concussion.junior %></td>
+              <td><%- concussion.sophomore %></td>
+              <td><%- concussion.freshman %></td>
+              <td><%- concussion.unknown %></td>
+              <td><strong><%- (concussion.senior + concussion.junior + concussion.sophomore + concussion.freshman + concussion.unknown) %></strong></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+  </div>
 
   <% if (helmets.length > 0) { %>
     <% helmets = _.sortBy(helmets, function(helmet) {
       return helmet.count * -1;
     }); %>
     <h4>Helmet inventory</h4>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Helmet</th>
-          <th>Star rating</th>
-          <th>Year purchased</th>
-          <th>Count</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% _.each(helmets, function(helmet) { %>
-          <tr>
-            <td><%- helmet.helmet.manufacturer %> <%- helmet.helmet.model %></td>
-            <td><% _.each(_.range(helmet.helmet.star_rating), function() { %>
-              *
-            <% }) %></td>
-            <% if(helmet.count_and_year_unknown) { %>
-              <td colspan="2"><small><em>Count, purchase year not reported by school</em></small></td>
-            <% } else { %>
-              <td><%- helmet.year_purchased %></td>
-              <td><%- helmet.count %></td>
-            <% } %>
-          </tr>
-        <% }); %>
-      </tbody>
-    </table>
+    <div class="responsive-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Helmet</th>
+              <th>Star rating</th>
+              <th>Year purchased</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% _.each(helmets, function(helmet) { %>
+              <tr>
+                <td><%- helmet.helmet.manufacturer %> <%- helmet.helmet.model %></td>
+                <td><% _.each(_.range(helmet.helmet.star_rating), function() { %>
+                  *
+                <% }) %></td>
+                <% if(helmet.count_and_year_unknown) { %>
+                  <td colspan="2"><small><em>Count, purchase year not reported by school</em></small></td>
+                <% } else { %>
+                  <td><%- helmet.year_purchased %></td>
+                  <td><%- helmet.count %></td>
+                <% } %>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>    
+    </div>
+
   <% } %>
 </script>
 
@@ -367,6 +375,17 @@ googletag.enableServices();
     <p>[Note: there is so much data out there on the decrease in youth football participation, with small drops, big drops and in between, depending on age parameters. I didn&rsquo;t think there was one that best reflected this, and wasn&rsquo;t sure we even needed to cite numbers because it has been so well-documented.] </p>
 
     <p>But a football helmet presents a unique engineering challenge, Beckmann said, especially in a sport in which the players keep getting bigger, faster and stronger. While helmets for sports such as auto racing, baseball and bicycling are designed to destroy themselves to prevent a catastrophic injury, a football helmet can&rsquo;t be one-and-done.</p>
+
+    <div id="scatter" class="graphics">
+  <h4>Concussions in 2015 and Average Helmet Rating</h4>
+  <p>A deck, if we want it. Yay decks!</p>
+
+  <div id="school"></div>
+
+  <div id='scatterplot'></div>
+</div>
+<p class="sourceLine cutline" style='font-size:1.3rem;'>*Not all schools provided helmet inventory or concussion data</br>SOURCE: <em>The Dallas Morning News</em> analysis</p>
+
 
     <p>&ldquo;Football helmets have to absorb thousands of impacts and not sacrifice their structural integrity,&rdquo; he said. &ldquo;I know most people are looking for simple answers, but it&rsquo;s a very complex biological problem, this problem of concussions, and there are just no simple answers.&rdquo;</p>
 
@@ -471,7 +490,11 @@ googletag.enableServices();
 		<p>©<span class="copyright"></span>, The Dallas Morning News Inc. All Rights Reserved.</p>
 	</footer>
 
+<<<<<<< HEAD
   	<script src="js/dependency-bundle.js"></script>
+=======
+  <script src="js/dependency-bundle.js"></script>
+>>>>>>> 0a3a95f815df8faf5e28213e1243856422d127aa
 	<script type="text/javascript" src="js/scripts-bundle.js"></script>
 
 	
