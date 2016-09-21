@@ -3,7 +3,7 @@
 <head prefix='og: http://ogp.me/ns#'>
 
 	<!-- Add Custom Meta Data -->
-	
+
 <meta content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper" name="keywords" />
 
 <meta charset="UTF-8" />
@@ -70,7 +70,7 @@
 	<!-- <link rel="stylesheet" type="text/css" href="css/dependency-bundle.css" /> -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="css/styles-bundle.css" />
-	
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js" />
 
 
@@ -81,7 +81,7 @@
 	START AD CODE
 	================================
 	-->
-	
+
 <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
 <script type="text/javascript">
 DFP_networkId = "11222444";
@@ -154,7 +154,7 @@ googletag.enableServices();
 
 	<article id="content">
 
-	
+
 <section id="content-header">
 
 </section>
@@ -278,6 +278,88 @@ googletag.enableServices();
 
     <p>Reducing the head contact might be more important than any possible helmet innovation. Rockwall players wear the five-star rated Schutt Vengeance helmets, but coach Rodney Webb said the helmet doesn&rsquo;t matter as much what the player does with it.</p>
 
+    <div id="search-tool">
+  <h2>Search concussions and helmet inventory by school</h2>
+  <div id="search-box"></div>
+  <div id="search-results"></div>
+</div>
+
+<script id="tpl-search-box" type="text/template">
+  <input class="form-control input-lg" type="text" placeholder="Enter a school name to search"></input>
+</script>
+
+<script id="tpl-search-results" type="text/template">
+  <h3><%- name %></h3>
+  <p><strong>Classification:</strong> <%- classification %>, <strong>District:</strong> <%- district %></p>
+
+  <p><%- notes %></p>
+
+  <% concussions = _.sortBy(concussions, function(concussion) {
+    return concussion.school_year * -1;
+  }); %>
+  <h4>Concussions</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>School year</th>
+        <th>Senior</th>
+        <th>Junior</th>
+        <th>Sophomore</th>
+        <th>Freshman</th>
+        <th>Grade unknown</th>
+        <th><strong>Total</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% _.each(concussions, function(concussion) { %>
+        <tr>
+          <td><%- concussion.school_year %></td>
+          <td><%- concussion.senior %></td>
+          <td><%- concussion.junior %></td>
+          <td><%- concussion.sophomore %></td>
+          <td><%- concussion.freshman %></td>
+          <td><%- concussion.unknown %></td>
+          <td><strong><%- (concussion.senior + concussion.junior + concussion.sophomore + concussion.freshman + concussion.unknown) %></strong></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <% if (helmets.length > 0) { %>
+    <% helmets = _.sortBy(helmets, function(helmet) {
+      return helmet.count * -1;
+    }); %>
+    <h4>Helmet inventory</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Helmet</th>
+          <th>Star rating</th>
+          <th>Year purchased</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(helmets, function(helmet) { %>
+          <tr>
+            <td><%- helmet.helmet.manufacturer %> <%- helmet.helmet.model %></td>
+            <td><% _.each(_.range(helmet.helmet.star_rating), function() { %>
+              *
+            <% }) %></td>
+            <% if(helmet.count_and_year_unknown) { %>
+              <td colspan="2"><small><em>Count, purchase year not reported by school</em></small></td>
+            <% } else { %>
+              <td><%- helmet.year_purchased %></td>
+              <td><%- helmet.count %></td>
+            <% } %>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } %>
+</script>
+
+
     <p>&ldquo;The helmets that I wore in high school and college, even the helmets of just 10 years ago, wouldn&rsquo;t be deemed safe today, and yet we made it through without any head injury,&rdquo; said Webb, who was an offensive lineman at Tarleton State from 1986 to 1989. &ldquo;At the end of the day, I think it has more to do with the way kids are using their heads and the fit of the helmet.&rdquo;</p>
 
     <p>Whether through improvement in protective gear, changes in tackling and blocking techniques or modifications to the game, player safety will be critical to the future of the sport. Football has seen a decline in youth participants ages 6-17 in recent years, and concerns about safety is often cited as a reason.</p>
@@ -389,16 +471,16 @@ googletag.enableServices();
 		<p>©<span class="copyright"></span>, The Dallas Morning News Inc. All Rights Reserved.</p>
 	</footer>
 
-  	<!-- <script src="js/dependency-bundle.js"></script> -->
+  <script src="js/dependency-bundle.js"></script>
 	<script type="text/javascript" src="js/scripts-bundle.js"></script>
 
-	
+
 	<script type="text/javascript"></script>
 
 
 
 
-	
+
 <script type="text/javascript">
   var storyTitle = "&lt;Text&gt;", // headline in tweet card
 	storyURL = "http://interactives.dallasnews.com/2016/concussions/",

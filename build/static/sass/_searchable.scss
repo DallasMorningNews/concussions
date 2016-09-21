@@ -1,0 +1,54 @@
+#search-tool {
+  max-width: 750px;
+  margin: 30px auto;
+  @media(max-width: 599px) {
+    padding: 20px 0 5px;
+    border-top: 2px solid $black235;
+    border-bottom: 2px solid $black235;
+  }
+  @media(min-width: 600px) {
+    background-color: $black245;
+    padding: 25px 30px;
+  }
+  max-height: 600px;
+  overflow-y: scroll;
+
+  #search-results {
+    margin-top: 20px;
+
+    > div {
+      margin-top: 20px;
+      background-color: #fff;
+      border: 1px solid $black235;
+      padding: 10px 20px;
+
+      table {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  input {
+    margin-top: 8px;
+    border-radius: 0;
+    border: 1px solid $black235;
+  }
+
+  // Tool labe ("Search concussions and helmet ...")
+  h2 {
+    margin-top: 0;
+    font-family: $sans;
+    font-weight: bold;
+    color: $black66;
+    font-size: 22px;
+  }
+
+  // All search results "data" - ratings, district, notes, etc.
+  p, table, input {
+    font-family: $sans;
+  }
+
+  th {
+    background-color: $black245;
+  }
+}
