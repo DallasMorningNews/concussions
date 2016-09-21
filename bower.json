@@ -1,5 +1,7 @@
 {
   "name": "concussions",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "backbone.marionette": "marionette#^2.4.7"
+  }
 }

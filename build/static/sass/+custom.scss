@@ -10,6 +10,8 @@
 @import 'variables';
 @import 'mixins';
 
+@import 'searchable';
+
 $primary: #9b2d51;
 $secondary: darken(#ccc, 10%);
 $tertiary: $chartYellow;

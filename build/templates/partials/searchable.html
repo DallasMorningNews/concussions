@@ -1,0 +1,80 @@
+<div id="search-tool">
+  <h2>Search concussions and helmet inventory by school</h2>
+  <div id="search-box"></div>
+  <div id="search-results"></div>
+</div>
+
+<script id="tpl-search-box" type="text/template">
+  <input class="form-control input-lg" type="text" placeholder="Enter a school name to search"></input>
+</script>
+
+<script id="tpl-search-results" type="text/template">
+  <h3><%- name %></h3>
+  <p><strong>Classification:</strong> <%- classification %>, <strong>District:</strong> <%- district %></p>
+
+  <p><%- notes %></p>
+
+  <% concussions = _.sortBy(concussions, function(concussion) {
+    return concussion.school_year * -1;
+  }); %>
+  <h4>Concussions</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>School year</th>
+        <th>Senior</th>
+        <th>Junior</th>
+        <th>Sophomore</th>
+        <th>Freshman</th>
+        <th>Grade unknown</th>
+        <th><strong>Total</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% _.each(concussions, function(concussion) { %>
+        <tr>
+          <td><%- concussion.school_year %></td>
+          <td><%- concussion.senior %></td>
+          <td><%- concussion.junior %></td>
+          <td><%- concussion.sophomore %></td>
+          <td><%- concussion.freshman %></td>
+          <td><%- concussion.unknown %></td>
+          <td><strong><%- (concussion.senior + concussion.junior + concussion.sophomore + concussion.freshman + concussion.unknown) %></strong></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <% if (helmets.length > 0) { %>
+    <% helmets = _.sortBy(helmets, function(helmet) {
+      return helmet.count * -1;
+    }); %>
+    <h4>Helmet inventory</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Helmet</th>
+          <th>Star rating</th>
+          <th>Year purchased</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% _.each(helmets, function(helmet) { %>
+          <tr>
+            <td><%- helmet.helmet.manufacturer %> <%- helmet.helmet.model %></td>
+            <td><% _.each(_.range(helmet.helmet.star_rating), function() { %>
+              *
+            <% }) %></td>
+            <% if(helmet.count_and_year_unknown) { %>
+              <td colspan="2"><small><em>Count, purchase year not reported by school</em></small></td>
+            <% } else { %>
+              <td><%- helmet.year_purchased %></td>
+              <td><%- helmet.count %></td>
+            <% } %>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } %>
+</script>
