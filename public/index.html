@@ -192,7 +192,7 @@ googletag.enableServices();
                     </a>
                 </ul>
             </div>
-            <img class="main-img" src="images/_illo-part1.jpg" alt="FILL THIS IN">
+            <img class="main-img" src="images/_illo-part1.jpg" alt="Pop art illustration of the evolution of football helmets">
             <p class="cutline">Illustration by Chris Morris/Special Contributor</p>
             <!-- <h3>Label, if needed</h3> -->
 
@@ -223,98 +223,32 @@ googletag.enableServices();
 
         <p>A 2013 study by the National Academy of Sciences, Engineering and Medicine found little evidence that helmets reduce the risk of concussions. And in the Dallas-Fort Worth area, there was no discernible correlation between a higher helmet rating and fewer concussions for public high school football players.</p>
 
-        <div id="search-tool" class="clearFix">
-  <h2>Search concussions and helmet inventory by school</h2>
-  <div id="search-box"></div>
-  <div id="search-results"></div>
+        <div id="scatter" class="graphics">
+  <h4>Concussions and Average Helmet Rating in 2015</h4>
+  <!-- <p>A deck, if we want it. Yay decks!</p> -->
+
+  <div id="school"></div>
+
+  <div id='scatterplot'></div>
+
+  <p class="sourceLine cutline" style='font-size:1.3rem;'>*Not all schools provided helmet inventory or concussion data</br>SOURCE: <em>The Dallas Morning News</em> analysis</p>
 </div>
-
-<script id="tpl-search-box" type="text/template">
-  <div id="search-input"></div>
-</script>
-
-<script id="tpl-search-results" type="text/template">
-  <h3><%- name %></h3>
-  <p><strong>Classification:</strong> <%- classification %>, <strong>District:</strong> <%- district %></p>
-
-  <p><%- notes %></p>
-
-  <% concussions = _.sortBy(concussions, function(concussion) {
-    return concussion.school_year * -1;
-  }); %>
-  <h4>Concussions</h4>
-  <div class="responsive-table">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>School year</th>
-            <th>Senior</th>
-            <th>Junior</th>
-            <th>Sophomore</th>
-            <th>Freshman</th>
-            <th>Grade unknown</th>
-            <th><strong>Total</strong></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% _.each(concussions, function(concussion) { %>
-            <tr>
-              <td><%- concussion.school_year %></td>
-              <td><%- concussion.senior %></td>
-              <td><%- concussion.junior %></td>
-              <td><%- concussion.sophomore %></td>
-              <td><%- concussion.freshman %></td>
-              <td><%- concussion.unknown %></td>
-              <td><strong><%- (concussion.senior + concussion.junior + concussion.sophomore + concussion.freshman + concussion.unknown) %></strong></td>
-            </tr>
-          <% }); %>
-        </tbody>
-      </table>
-  </div>
-
-  <% if (helmets.length > 0) { %>
-    <% helmets = _.sortBy(helmets, function(helmet) {
-      return helmet.count * -1;
-    }); %>
-    <h4>Helmet inventory</h4>
-    <div class="responsive-table">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Helmet</th>
-              <th>Star rating</th>
-              <th>Year purchased</th>
-              <th>Count</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% _.each(helmets, function(helmet) { %>
-              <tr>
-                <td><%- helmet.helmet.manufacturer %> <%- helmet.helmet.model %></td>
-                <td><% _.each(_.range(helmet.helmet.star_rating), function() { %>
-                &#x2605
-                <% }) %></td>
-                <% if(helmet.count_and_year_unknown) { %>
-                  <td colspan="2"><small><em>Count, purchase year not reported by school</em></small></td>
-                <% } else { %>
-                  <td><%- helmet.year_purchased %></td>
-                  <td><%- helmet.count %></td>
-                <% } %>
-              </tr>
-            <% }); %>
-          </tbody>
-        </table>
-    </div>
-
-  <% } %>
-</script>
 
 
         <p>The increased awareness of the damaging effects of multiple concussions, due in no small part to the NFL’s $1 billion settlement with its former players, has also led to more scrutiny of how a helmet can and cannot protect a player. The NFL announced this month that it will spend an additional $100 million to develop technology and support medical research of head injuries.</p>
 
         <p>Riddell and Schutt, the largest providers of football helmetsto schools in the Dallas-Fort Worth area and the country, mention on their websites that no helmet can prevent all serious head and neck injuries.</p>
 
-        <p>“Helmets were designed to do two things: protect the skull and absorb direct linear-force impact,” said Glenn Beckmann, the director of marketing communications for Schutt. “It’s a fairytale, a falsehood, that there is a concussion-proof helmet.”</p>
+        <p>“Helmets were designed to do two things: protect the skull and absorb direct linear-force impact,” said Glenn Beckmann, the director of marketing communications for Schutt.
+
+        <div class="container-fluid quote-wrapper1">
+        	<div class="quote-wrapper2">
+        		<p>“It’s a fairytale, a falsehood, that there is a concussion-proof helmet.”</p>
+        		<h5>— Glenn Beckmann</h5>
+        	</div>
+        </div>
+
+        <!-- “It’s a fairytale, a falsehood, that there is a concussion-proof helmet.”</p> -->
 
         <p>Riddell once marketed its Revolution helmet, introduced in 2002 and one of the most popular in the Dallas area, as specifically designed to reduce concussions. But Riddell stopped boasting a 31 percent reduction in concussion risk when the Federal Trade Commission investigated the claim in 2013.</p>
 
@@ -344,6 +278,12 @@ googletag.enableServices();
 
         <p>Bell’s last game was on Oct. 3, 2009, when he was an SMU junior and made a crushing helmet-to-helmet hit on TCU receiver Ryan Christian.</p>
 
+        <div class="inline-block image-block">
+            <img src="images/_part1-bell-hit.jpg" alt="Derrius Bell and Ryan Christian collide on the field.">
+            <p class="cutline left">SMU's Derrius Bell comes in for a hard helmet to helmet hit against TCU's Ryan Christian. (Star-Telegram/Richard W. Rodriguez)</p>
+        </div>
+        <!--end inline image -->
+
         <p>“I ended up knocking him out,” Bell said, “but I knocked myself out, too.”</p>
 
         <p>Christian played again that season and in 2010 with the Toronto Argonauts of the Canadian Football League. But Bell’s second concussion in three weeks ended his season, and doctors advised him to quit football.</p>
@@ -353,6 +293,12 @@ googletag.enableServices();
         <p>Bell said nobody told him to lead with his helmet on a tackle, but the big hits were celebrated. There was little mention of protecting himself or the opponent.</p>
 
         <p>“There’s no doubt it’s changed,” Bell said. “These days, it’s much more at the top of the conversation. Hit with your head up, protect yourself.”</p>
+
+        <div class="inline-block image-block">
+            <img src="images/_part1-bell-hit2.jpg" alt="Players surround Derrius Bell and Ryan Christian after a critical hit.">
+            <p class="cutline left">Christian and Bell lie on the ground after colliding in the first quarter.<br /> (Star-Telegram/Richard W. Rodriguez)</p>
+        </div>
+        <!--end inline image -->
 
         <h3 class="subhead">‘No simple answers’</h3>
 
@@ -369,31 +315,6 @@ googletag.enableServices();
         <p>But it’s important to keep looking, Batjer said, and he sees hope in the Head Health Challenge, which each year gives out financial awards for the discovery, design and development of materials that better dissipate impact. The Challenge, sponsored by the NFL, Under Armour and the U.S. Department of Commerce’s National Institute of Standards and Technology, handed out five $250,000 awards last year.</p>
 
         <p>“It is not simple, but it’s solvable,” Batjer said. “This is a child and player safety problem that we need to deal with. We need to throw the best science at it, get the best protective devices that are humanly possible, and put them on our players, period. It doesn’t matter what it costs.”</p>
-
-
-
-    <div class="container-fluid quote-wrapper1">
-    	<div class="quote-wrapper2">
-    		<p><span class="quotes">&ldquo;</span>That status quo is not acceptable. We know that the current device is inadequate to protect players.<span class="quotes">&rdquo;</span></p>
-
-    		<h5>— Dr. Hunt Batjer</h5>
-    	</div>
-    </div>
-
-
-        <div id="scatter" class="graphics">
-  <h4>Concussions and Average Helmet Rating in 2015</h4>
-  <!-- <p>A deck, if we want it. Yay decks!</p> -->
-
-  <div id="school"></div>
-
-  <div id='scatterplot'></div>
-</div>
-<p class="sourceLine cutline" style='font-size:1.3rem;'>*Not all schools provided helmet inventory or concussion data</br>SOURCE: <em>The Dallas Morning News</em> analysis</p>
-
-
-
-
 
         </section>
 
@@ -420,9 +341,8 @@ googletag.enableServices();
 	<section class="credits clearfix">
         <p><strong>Author:</strong> <a href="mailto:mwixon@dallasnews.com">Matt Wixon</a></p>
         <p><strong>Editor:</strong> <a href="mailto:tmagelssen@dallasnews.com">Tommy Magelssen</a></p>
-        <p><strong>Copy Editor:</strong> <a href="mailto:emailaddress">Name</a></p>
-        <p><strong>Photos:</strong> <a href="mailto:emailaddress">Name</a></p>
-        <p><strong>Graphics:</strong> <a href="mailto:emailaddress">Name</a></p>
+        <p><strong>Copy Editor:</strong> <a href="mailto:kgray@dallasnews.com">Kevin Gray</a></p>
+        <p><strong>Graphics and data reporting:</strong> <a href="mailto:achavez@dallasnews.com">Andrew Chavez</a> and <a href="mailto:agiorgi@dallasnews.com">Ariana Giorgi</a></p>
         <p><strong>Designer:</strong> <a href="mailto:kwalker@dallasnews.com">Kristi Walker</a></p>
 	</section>
 	<!-- end credits -->

@@ -50,6 +50,10 @@ MISC TEMPLATE EDITS
     border-bottom: none;
 }
 
+.left{
+	text-align: left;
+}
+
 /**************
 TOP NAV
 **************/
@@ -149,11 +153,11 @@ STORY CONTENT
 **************/
 
 .subhead {
-	color: red;
+	color: $primary;
+	@include headline("Kanit", 800, auto, $primary, uppercase);
     max-width: 650px;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 6rem auto 2rem;
     text-align: center;
 }
 
