@@ -1,60 +1,54 @@
 @import '../vendor/selectize/dist/css/selectize';
-
+@import 'mixins';
+@import 'variables';
 .graphics {
-  font-family: $sans;
-  display: block;
-  margin: 0 auto;
-  max-width: 600px;
-
-  h4, p {
-    color: #4d4d4d;
-  }
-
-  h4 {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-  }
-
-  p {
-    font-size: 15px;
-    line-height: 20px;
-    margin-bottom: 25px;
-  }
-
+    font-family: $sans;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 650px;
+    h4,
+    p {
+        color: #4d4d4d;
+    }
+    h4 {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+    p {
+        font-size: 15px;
+        line-height: 20px;
+        margin-bottom: 25px;
+    }
 }
-
-.dot {
-  stroke: blue;
-}
-
-
 .axis-title {
-  fill: black;
-  font-family: $sans;
-  font-size: 12px;
+    fill: $chartCopy;
+    font-family: $sans;
+    font-size: 1.2rem;
 }
-
 .axis {
-  font-size: 12px;
+    font-size: 1.2rem;
 }
-
 .d3-tip {
-  line-height: 1.2;
-  font-weight: bold;
-  padding: 10px;
-  background: white;
-  border-radius: 2px;
-  border-style: solid;
-  border-width: 1px;
-  font-family: $sans;
-  font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    background: $primary;
+    font-family: $sans;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: white;
+    font-weight: normal;
 }
-
+.selectize-control {
+    width: 400px;
+    margin-bottom: 20px;
+}
 p.sourceLine {
-  font-family: $sans;
+    font-family: $sans;
     width: 100%;
     max-width: 650px;
-    margin: 0 auto;
-  margin-bottom: 20px;
+    margin: 0 auto 20px;
+    line-height: 1.8rem;
+    text-align: left;
 }

@@ -67,7 +67,7 @@
               <tr>
                 <td><%- helmet.helmet.manufacturer %> <%- helmet.helmet.model %></td>
                 <td><% _.each(_.range(helmet.helmet.star_rating), function() { %>
-                  *
+                &#x2605
                 <% }) %></td>
                 <% if(helmet.count_and_year_unknown) { %>
                   <td colspan="2"><small><em>Count, purchase year not reported by school</em></small></td>
@@ -78,7 +78,7 @@
               </tr>
             <% }); %>
           </tbody>
-        </table>    
+        </table>
     </div>
 
   <% } %>

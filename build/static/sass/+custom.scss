@@ -13,13 +13,6 @@
 @import 'searchable';
 @import 'helmet-rating';
 
-$primary: #9b2d51;
-$secondary: darken(#ccc, 10%);
-$tertiary: $chartYellow;
-
-$normal: #323232;
-$light: #ccc;
-
 $nav-buttons: nav1 nav2 nav3;
 
 @mixin headline($font, $weight, $size, $color, $transform) {

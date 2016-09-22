@@ -351,7 +351,7 @@
     margin-top: 8px;
     border-radius: 0;
     border: 1px solid #ebebeb; }
-  #search-tool .item {
+  #search-tool #search-box {
     font-family: "Gotham A", "Gotham B", Arial, sans-serif; }
   #search-tool .responsive-table {
     overflow-x: auto; }
@@ -708,8 +708,10 @@
   font-family: "Gotham A", "Gotham B", Arial, sans-serif;
   display: block;
   margin: 0 auto;
-  max-width: 600px; }
-  .graphics h4, .graphics p {
+  width: 90%;
+  max-width: 650px; }
+  .graphics h4,
+  .graphics p {
     color: #4d4d4d; }
   .graphics h4 {
     font-size: 20px;
@@ -720,34 +722,35 @@
     line-height: 20px;
     margin-bottom: 25px; }
 
-.dot {
-  stroke: blue; }
-
 .axis-title {
-  fill: black;
+  fill: #333333;
   font-family: "Gotham A", "Gotham B", Arial, sans-serif;
-  font-size: 12px; }
+  font-size: 1.2rem; }
 
 .axis {
-  font-size: 12px; }
+  font-size: 1.2rem; }
 
 .d3-tip {
-  line-height: 1.2;
   font-weight: bold;
   padding: 10px;
-  background: white;
-  border-radius: 2px;
-  border-style: solid;
-  border-width: 1px;
+  background: #9b2d51;
   font-family: "Gotham A", "Gotham B", Arial, sans-serif;
-  font-size: 14px; }
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: white;
+  font-weight: normal; }
+
+.selectize-control {
+  width: 400px;
+  margin-bottom: 20px; }
 
 p.sourceLine {
   font-family: "Gotham A", "Gotham B", Arial, sans-serif;
   width: 100%;
   max-width: 650px;
-  margin: 0 auto;
-  margin-bottom: 20px; }
+  margin: 0 auto 20px;
+  line-height: 1.8rem;
+  text-align: left; }
 
 .transition {
   -o-transition: .5s;

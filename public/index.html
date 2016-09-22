@@ -75,6 +75,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles-bundle.css" />
 	
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
 
@@ -350,7 +351,7 @@ googletag.enableServices();
               <tr>
                 <td><%- helmet.helmet.manufacturer %> <%- helmet.helmet.model %></td>
                 <td><% _.each(_.range(helmet.helmet.star_rating), function() { %>
-                  *
+                &#x2605
                 <% }) %></td>
                 <% if(helmet.count_and_year_unknown) { %>
                   <td colspan="2"><small><em>Count, purchase year not reported by school</em></small></td>
@@ -361,7 +362,7 @@ googletag.enableServices();
               </tr>
             <% }); %>
           </tbody>
-        </table>    
+        </table>
     </div>
 
   <% } %>
@@ -377,8 +378,8 @@ googletag.enableServices();
     <p>But a football helmet presents a unique engineering challenge, Beckmann said, especially in a sport in which the players keep getting bigger, faster and stronger. While helmets for sports such as auto racing, baseball and bicycling are designed to destroy themselves to prevent a catastrophic injury, a football helmet can&rsquo;t be one-and-done.</p>
 
     <div id="scatter" class="graphics">
-  <h4>Concussions in 2015 and Average Helmet Rating</h4>
-  <p>A deck, if we want it. Yay decks!</p>
+  <h4>Concussions and Average Helmet Rating in 2015</h4>
+  <!-- <p>A deck, if we want it. Yay decks!</p> -->
 
   <div id="school"></div>
 

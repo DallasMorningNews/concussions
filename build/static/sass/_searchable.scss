@@ -1,12 +1,11 @@
 @import '../vendor/selectize/dist/css/selectize';
-$primary: #9b2d51;
+@import 'variables';
 
 .mobile-width {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
-
 #search-tool {
     max-width: 650px;
     margin: 30px auto;
@@ -37,7 +36,8 @@ $primary: #9b2d51;
         border-radius: 0;
         border: 1px solid $black235;
     }
-    .item {
+
+    #search-box {
         font-family: $sans;
     }
     .responsive-table {

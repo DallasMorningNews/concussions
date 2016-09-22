@@ -47,8 +47,8 @@ var tip = d3.tip()
       }
   })
   .html(function(d) {
-    return "<em>" + d.name + "</em><br><strong>Average Helmet Rating: </strong>" + d.avg_star +
-            "</br><strong>Concussions in 2015: </strong>" + d.concussions2015 ;
+    return "<strong>" + d.name + "</strong><br>Rating: " + d.avg_star +
+            "</br>Concussions: " + d.concussions2015 ;
   });
 svg.call(tip);
 
@@ -131,9 +131,9 @@ function drawCircle(school_id, data){
         if (d.school_id == school_id){
           var sel = d3.select(this);
           sel.moveToFront();
-          return 'blue';
+          return '#9b2d51';
         } else{
-          return 'yellow';
+          return '#ccc';
         }
       })
       .on('mouseover', tip.show)
