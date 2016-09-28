@@ -28,7 +28,7 @@
             <th>Sophomore</th>
             <th>Freshman</th>
             <th>Grade unknown</th>
-            <th><strong>Total</strong></th>
+            <th>Total</th>
           </tr>
         </thead>
         <tbody>
@@ -40,7 +40,7 @@
               <td><%- concussion.sophomore %></td>
               <td><%- concussion.freshman %></td>
               <td><%- concussion.unknown %></td>
-              <td><strong><%- (concussion.senior + concussion.junior + concussion.sophomore + concussion.freshman + concussion.unknown) %></strong></td>
+              <td><%- (concussion.senior + concussion.junior + concussion.sophomore + concussion.freshman + concussion.unknown) %></td>
             </tr>
           <% }); %>
         </tbody>

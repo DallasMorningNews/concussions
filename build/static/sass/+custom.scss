@@ -54,6 +54,12 @@ MISC TEMPLATE EDITS
 	text-align: left;
 }
 
+.image-block {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /**************
 TOP NAV
 **************/
@@ -133,9 +139,9 @@ HEADER AND DECK
         }
 	}
 	h2 {
-		@include headline("Kanit", 200, 5rem, auto, auto);
+		@include headline("Kanit", 200, 4rem, auto, auto);
 		font-style: italic;
-        line-height: 6rem;
+        line-height: 4.8rem;
 
         @media only screen and (max-width: 678px) {
             font-size: 3rem;
@@ -167,7 +173,7 @@ STORY CONTENT
     height: 500px;
     position: relative;
     width: 100%;
-    max-width: 650px;
+    max-width: 1000px;
     padding: 0px;
 
     @media only screen and (max-width: 678px) {
@@ -219,6 +225,74 @@ STORY CONTENT
     }
 }
 
+.fact-box {
+    margin: 48px auto;
+    border-bottom: 1px solid #ccc;
+
+    @media only screen and (max-width: 678px) {
+        border-top: none;
+    }
+
+    h4 {
+        color: white;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+        text-align: center;
+        background: $primary;
+        padding: 2rem 0;
+    }
+
+    .row {
+        margin: 2rem 0;
+    }
+    .number {
+        position: relative;
+        // background-color: $primary;
+        height: 110px;
+        margin: 0 auto;
+
+        @media only screen and (max-width: 678px) {
+            height: 90px;
+            width: 90%;
+            float: none;
+        }
+    }
+    h1 {
+        @include headline("Kanit", 100, 5rem, $primary, auto);
+        position: absolute;
+        text-align: center;
+        left: 0;
+        right: 0;
+        line-height: 4.8rem;
+        top: 48%;
+        @extend .transform;
+    }
+    .number-text {
+        padding-left: 2rem;
+        position: relative;
+        min-height: 110px;
+
+        @media only screen and (max-width: 678px) {
+            min-height: inherit;
+            width: 100%;
+        }
+    }
+    p {
+        position: absolute;
+        top: 50%;
+        @extend .transform;
+
+        @media only screen and (max-width: 678px) {
+            min-height: inherit;
+            position: relative;
+            top: inherit;
+            transform: none;
+        }
+    }
+
+}
+
 /**************
 BOTTOM NAV
 **************/
@@ -244,6 +318,8 @@ BOTTOM NAV
         position: absolute;
         top: 50%;
         @extend .transform;
+        left: 0;
+        right: 0;
     }
 
     &:hover {
@@ -262,6 +338,7 @@ BOTTOM NAV
         text-align: center;
         line-height: 3.6rem;
         margin-bottom: 0;
+        padding: 0 0.5rem;
     }
 
     h2 {

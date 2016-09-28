@@ -754,7 +754,7 @@
   font-weight: normal; }
 
 .selectize-control {
-  width: 400px;
+  width: 300px;
   margin: 0 auto 20px; }
 
 p.sourceLine {
@@ -771,7 +771,7 @@ p.sourceLine {
   -moz-transition: .5s;
   -webkit-transition: .5s; }
 
-.transform, .quote-wrapper2, .bottom-nav .text-wrapper {
+.transform, .quote-wrapper2, .fact-box h1, .fact-box p, .bottom-nav .text-wrapper {
   -ms-transform: translateY(-50%);
   /* IE 9 */
   -webkit-transform: translateY(-50%);
@@ -793,6 +793,11 @@ MISC TEMPLATE EDITS
 
 .left {
   text-align: left; }
+
+.image-block {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto; }
 
 /**************
 TOP NAV
@@ -866,11 +871,11 @@ HEADER AND DECK
 #story-head h2 {
   font-family: "Kanit";
   font-weight: 200;
-  font-size: 5rem;
+  font-size: 4rem;
   color: auto;
   text-transform: auto;
   font-style: italic;
-  line-height: 6rem; }
+  line-height: 4.8rem; }
   @media only screen and (max-width: 678px) {
     #story-head h2 {
       font-size: 3rem;
@@ -904,7 +909,7 @@ STORY CONTENT
   height: 500px;
   position: relative;
   width: 100%;
-  max-width: 650px;
+  max-width: 1000px;
   padding: 0px; }
   @media only screen and (max-width: 678px) {
     .quote-wrapper1 {
@@ -948,6 +953,61 @@ STORY CONTENT
       .quote-wrapper2 h5 {
         font-size: 2.6rem; } }
 
+.fact-box {
+  margin: 48px auto;
+  border-bottom: 1px solid #ccc; }
+  @media only screen and (max-width: 678px) {
+    .fact-box {
+      border-top: none; } }
+  .fact-box h4 {
+    color: white;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    text-align: center;
+    background: #329ce8;
+    padding: 2rem 0; }
+  .fact-box .row {
+    margin: 2rem 0; }
+  .fact-box .number {
+    position: relative;
+    height: 110px;
+    margin: 0 auto; }
+    @media only screen and (max-width: 678px) {
+      .fact-box .number {
+        height: 90px;
+        width: 90%;
+        float: none; } }
+  .fact-box h1 {
+    font-family: "Kanit";
+    font-weight: 100;
+    font-size: 5rem;
+    color: #329ce8;
+    text-transform: auto;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    line-height: 4.8rem;
+    top: 48%; }
+  .fact-box .number-text {
+    padding-left: 2rem;
+    position: relative;
+    min-height: 110px; }
+    @media only screen and (max-width: 678px) {
+      .fact-box .number-text {
+        min-height: inherit;
+        width: 100%; } }
+  .fact-box p {
+    position: absolute;
+    top: 50%; }
+    @media only screen and (max-width: 678px) {
+      .fact-box p {
+        min-height: inherit;
+        position: relative;
+        top: inherit;
+        transform: none; } }
+
 /**************
 BOTTOM NAV
 **************/
@@ -968,7 +1028,9 @@ BOTTOM NAV
   cursor: pointer; }
   .bottom-nav .text-wrapper {
     position: absolute;
-    top: 50%; }
+    top: 50%;
+    left: 0;
+    right: 0; }
   .bottom-nav:hover {
     background: #fec44f; }
   @media only screen and (max-width: 678px) {
@@ -985,7 +1047,8 @@ BOTTOM NAV
     font-style: italic;
     text-align: center;
     line-height: 3.6rem;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    padding: 0 0.5rem; }
   .bottom-nav h2 {
     font-family: "Kanit";
     font-weight: 600;
