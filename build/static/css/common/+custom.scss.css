@@ -347,12 +347,15 @@
       padding: 20px; }
       #search-tool #search-results > div table {
         margin-bottom: 0; }
+  #search-tool .selectize-control {
+    margin: 0 auto; }
   #search-tool input {
     margin-top: 8px;
     border-radius: 0;
     border: 1px solid #ebebeb; }
   #search-tool #search-box {
-    font-family: "Gotham A", "Gotham B", Arial, sans-serif; }
+    font-family: "Gotham A", "Gotham B", Arial, sans-serif;
+    margin: 0 auto; }
   #search-tool .responsive-table {
     overflow-x: auto; }
   #search-tool h2 {
@@ -361,7 +364,8 @@
     font-weight: bold;
     color: white;
     font-size: 2rem;
-    line-height: 2.4rem; }
+    line-height: 2.4rem;
+    text-align: center; }
   #search-tool h3 {
     font-family: "Gotham A", "Gotham B", Arial, sans-serif;
     font-size: 2rem;
@@ -718,13 +722,14 @@
   padding-bottom: 20px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc; }
-  .graphics h4,
   .graphics p {
     color: #4d4d4d; }
   .graphics h4 {
+    color: #329ce8;
     font-size: 20px;
     line-height: 24px;
-    font-weight: 700; }
+    font-weight: 700;
+    text-align: center; }
   .graphics p {
     font-size: 15px;
     line-height: 20px;
@@ -750,7 +755,7 @@
 
 .selectize-control {
   width: 400px;
-  margin-bottom: 20px; }
+  margin: 0 auto 20px; }
 
 p.sourceLine {
   font-family: "Gotham A", "Gotham B", Arial, sans-serif;

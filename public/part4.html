@@ -202,7 +202,7 @@ googletag.enableServices();
     		<!-- end storyHead -->
 
         <div class="byline-block">
-            <p>By <a target="_blank" href="mailto:mwixon@dallasnews.com">Matt Wixon</a> | Staff Writer</p>
+            <p>By <a target="_blank" href="mailto:griddle@dallasnews.com">Greg Riddle</a> | Staff Writer</p>
             <p>Published Month Date, Year</p>
             <!-- <p>Updated Month, Date, Year</p> -->
         </div>
@@ -229,7 +229,7 @@ googletag.enableServices();
 
         <div class="inline-block image-block">
             <img src="images/_part4-staubach.jpg" alt="Roger Staubach poses with the football helmets of his past.">
-            <p class="cutline left">Hall of Fame Dallas Cowboys quarterback Roger Staubach poses with the football helmets that he wore in high school, college and the NFL. (Tom Fox/The Dallas Morning News) </p>
+            <p class="cutline left">Hall of Fame Dallas Cowboys quarterback Roger Staubach poses with the football helmets that he wore in high school, college and the NFL.</p>
         </div>
         <!--end inline image -->
 
@@ -247,6 +247,101 @@ googletag.enableServices();
 
         <p>Information from the National Federation of State High School Associations shows that 28,686 fewer high school boys played 11-man football nationwide in the 2014-15 school year than in 2008-09.</p>
 
+        <!-- High school concussions and helmets search -->
+        <div id="search-tool" class="clearFix">
+  <h2>Search concussions and helmet inventory by school</h2>
+  <div id="search-box"></div>
+  <div id="search-results"></div>
+</div>
+
+<script id="tpl-search-box" type="text/template">
+  <div id="search-input"></div>
+</script>
+
+<script id="tpl-search-results" type="text/template">
+  <h3><%- name %></h3>
+  <p><strong>Classification:</strong> <%- classification %>, <strong>District:</strong> <%- district %></p>
+
+  <p><%- notes %></p>
+
+  <% concussions = _.sortBy(concussions, function(concussion) {
+    return concussion.school_year * -1;
+  }); %>
+  <h4>Concussions</h4>
+  <div class="responsive-table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>School year</th>
+            <th>Senior</th>
+            <th>Junior</th>
+            <th>Sophomore</th>
+            <th>Freshman</th>
+            <th>Grade unknown</th>
+            <th><strong>Total</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% _.each(concussions, function(concussion) { %>
+            <tr>
+              <td><%- concussion.school_year %></td>
+              <td><%- concussion.senior %></td>
+              <td><%- concussion.junior %></td>
+              <td><%- concussion.sophomore %></td>
+              <td><%- concussion.freshman %></td>
+              <td><%- concussion.unknown %></td>
+              <td><strong><%- (concussion.senior + concussion.junior + concussion.sophomore + concussion.freshman + concussion.unknown) %></strong></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+  </div>
+
+  <% if (helmets.length > 0) { %>
+    <% helmets = _.sortBy(helmets, function(helmet) {
+      return helmet.count * -1;
+    }); %>
+    <h4>Helmet inventory</h4>
+    <div class="responsive-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Helmet</th>
+              <th>Star rating</th>
+              <th>Year purchased</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% _.each(helmets, function(helmet) { %>
+              <tr>
+                <td><%- helmet.helmet.manufacturer %> <%- helmet.helmet.model %></td>
+                <td><% _.each(_.range(helmet.helmet.star_rating), function() { %>
+                &#x2605
+                <% }) %></td>
+                <% if(helmet.count_and_year_unknown) { %>
+                  <td colspan="2"><small><em>Count, purchase year not reported by school</em></small></td>
+                <% } else { %>
+                  <td><%- helmet.year_purchased %></td>
+                  <td><%- helmet.count %></td>
+                <% } %>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+    </div>
+    <div class="source-wrapper">
+        <p class="source">Via state open records laws, The Dallas Morning News acquired concussion records from the 2012-13, 2013-14, 2014-15 and 2015-16 school years over the summer. The News also acquired current helmet inventories for public high school football programs in SportsDayHS’ coverage area.</p><br />
+
+        <p class="source">The News asked for documentation that showed when helmets were purchased and their exact manufacturer and model. Also requested were records of concussions from the 2012-13 school year through the 2015-16 school year for each high school’s football program. Some schools were unable to provide this information.</p><br />
+
+        <p class="source">Data was compiled June 13 through Sept. 16.</p>
+    </div>
+
+  <% } %>
+</script>
+
+
         <p>Yet national concussion estimates for high school football nearly doubled from the 2007-08 school year to 2014-15, according to the National High School Sports-Related Injury Surveillance Study.</p>
 
         <p>While medical personnel have gotten better at identifying concussions and athletes are more aware of the injury and self-report more often, University of Michigan associate professor of kinesiology Steve Broglio cautions that even now, “we know upward of about half the injuries go unreported to athletic trainers.”</p>
@@ -258,6 +353,11 @@ googletag.enableServices();
         <p>VICIS isn’t the only helmet manufacturer looking for ways to create safer football helmets.</p>
 
         <p>Xenith’s shock suspension system utilizes a web-like bonnet of shock absorbers that move independently of the plastic shell to mitigate impact. Impact sensors from Riddell and Schutt Sports alert the sideline when an abnormal impact exposure happens. Schutt and Xenith have made helmet-fitting advancements to help stabilize the head and prevent helmets from flying off.</p>
+
+        <div class="inline-block image-block">
+            <img src="images/_xenith.png" alt="Graphic of the X2E Varsity helmet and its concussion prevention features">
+        </div>
+        <!--end inline image -->
 
         <p>“Until recently, there was not a measurable difference in concussion risk across the spectrum of helmets — even including the more expensive ones,” said Dr. Michael Bergeron, president and CEO of Youth Sports of the Americas. “Very recent advances in materials and design, however, show promise in reducing forces transferred to the brain.”</p>
 
@@ -341,15 +441,16 @@ googletag.enableServices();
 <section class="content-well clearfix">
 
 
-    <p class="twitter-tag">Follow writer Matt Wixon on Twitter at <a href="https://twitter.com/mattwixon">@mattwixon.</a></p>
+    <p class="twitter-tag">Follow writer Greg Riddle on Twitter at <a href="https://twitter.com/DMNGregRiddle">@DMNGregRiddle.</a></p>
 
 
 	<section class="credits clearfix">
-        <p><strong>Author:</strong> <a href="mailto:mwixon@dallasnews.com">Matt Wixon</a></p>
+        <p><strong>Author:</strong> <a href="mailto:griddle@dallasnews.com">Greg Riddle</a></p>
         <p><strong>Editor:</strong> <a href="mailto:tmagelssen@dallasnews.com">Tommy Magelssen</a></p>
-        <p><strong>Copy Editor:</strong> <a href="mailto:emailaddress">Name</a></p>
-        <p><strong>Photos:</strong> <a href="mailto:emailaddress">Name</a></p>
-        <p><strong>Graphics:</strong> <a href="mailto:emailaddress">Name</a></p>
+        <p><strong>Copy Editor:</strong> <a href="mailto:kgray@dallasnews.com">Kevin Gray</a></p>
+        <p><strong>Photos:</strong> <a href="mailto:tfox@dallasnews.com">Tom Fox</a></p>
+        <p><strong>Graphics:</strong> <a href="mailto:achavez@dallasnews.com">Andrew Chavez</a> and <a href="mailto:toxford@dallasnews.com">Troy Oxford</a></p>
+        <p><strong>Data reporting:</strong> <a href="mailto:achavez@dallasnews.com">Andrew Chavez</a></p>
         <p><strong>Designer:</strong> <a href="mailto:kwalker@dallasnews.com">Kristi Walker</a></p>
 	</section>
 	<!-- end credits -->

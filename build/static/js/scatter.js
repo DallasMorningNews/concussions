@@ -131,11 +131,30 @@ function drawCircle(school_id, data){
         if (d.school_id == school_id){
           var sel = d3.select(this);
           sel.moveToFront();
-          return '#9b2d51';
+          return 'white';
         } else{
           return '#ccc';
         }
       })
+      .style('stroke', function(d){
+        if (d.school_id == school_id){
+          var sel = d3.select(this);
+          sel.moveToFront();
+          return '#329ce8';
+        } else{
+          return '#ccc';
+        }
+      })
+      .style('stroke-width', function(d){
+        if (d.school_id == school_id){
+          var sel = d3.select(this);
+          sel.moveToFront();
+          return 3;
+        } else{
+          return 0;
+        }
+      })
+      .style('stroke-alignment', 'outer')
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
 

@@ -31,6 +31,11 @@
             }
         }
     }
+
+    .selectize-control {
+        margin: 0 auto;    
+    }
+
     input {
         margin-top: 8px;
         border-radius: 0;
@@ -39,6 +44,7 @@
 
     #search-box {
         font-family: $sans;
+        margin: 0 auto;
     }
     .responsive-table {
         overflow-x: auto;
@@ -51,6 +57,7 @@
         color: white;
         font-size: 2rem;
         line-height: 2.4rem;
+        text-align: center;
     }
     h3 {
         font-family: $sans;
