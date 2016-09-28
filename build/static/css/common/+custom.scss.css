@@ -837,7 +837,7 @@ TOP NAV
       #top-nav-wrapper li {
         height: 30px;
         padding-top: 3px; } }
-    @media only screen and (max-width: 678px) {
+    @media only screen and (max-width: 980px) {
       #top-nav-wrapper li .nav-desk {
         display: none; } }
     #top-nav-wrapper li.active {
@@ -845,7 +845,7 @@ TOP NAV
     #top-nav-wrapper li h2 {
       font-family: "Kanit";
       font-weight: 100;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: white;
       text-transform: auto;
       line-height: 2.4rem; }
@@ -860,7 +860,7 @@ HEADER AND DECK
   font-size: 10rem;
   color: #329ce8;
   text-transform: uppercase;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.2rem;
   line-height: 9.6rem; }
   @media only screen and (max-width: 678px) {
     #story-head h1 {
@@ -1025,14 +1025,20 @@ BOTTOM NAV
   border-right: 4px solid white;
   border-left: 4px solid white;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
   .bottom-nav .text-wrapper {
     position: absolute;
     top: 50%;
     left: 0;
     right: 0; }
   .bottom-nav:hover {
-    background: #fec44f; }
+    background: #fec44f;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; }
   @media only screen and (max-width: 678px) {
     .bottom-nav {
       width: 100%;
@@ -1061,19 +1067,13 @@ BOTTOM NAV
     margin-bottom: 1rem; }
 
 #bottom-nav1 {
-  background-image: url("../images/_bottom-nav2.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: contain; }
+  background-image: url("../images/_bottom-nav1.png"); }
 
 #bottom-nav2 {
-  background-image: url("../images/_bottom-nav3.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain; }
+  background-image: url("../images/_bottom-nav2.png"); }
 
 #bottom-nav3 {
-  background-image: url("../images/_bottom-nav4.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain; }
+  background-image: url("../images/_bottom-nav3.png"); }
+
+#bottom-nav4 {
+  background-image: url("../images/_bottom-nav4.png"); }
