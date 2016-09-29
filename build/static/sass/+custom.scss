@@ -247,7 +247,14 @@ STORY CONTENT
         }
     }
 }
-
+#improvements {
+	p {
+		position: relative;
+		top: auto;
+		transform: none;
+		margin-bottom: 1.2rem;
+	}
+}
 .fact-box {
     margin: 48px auto;
     border-bottom: 1px solid #ccc;
