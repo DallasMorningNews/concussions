@@ -3,32 +3,32 @@
 
 
 {%block custom_meta%}
-<meta content="{{keywords|join(',')}}" name="keywords" />
+<meta content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper,high school football,football,concussions,helmets,Roger Staubach,X2E Varsity helmet,Xenith" name="keywords" />
 
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<meta content="{{shareText}}" name="description" />
+<meta content="With help from Roger Staubach and other Hall of Famers, helmet manufacturers skeek innovations to reduce the risk of concussions" name="description" />
 <title>Solving the unsolvable</title>
-<meta property="og:url" content="{{url}}" />
-<meta property="og:title" content="{{shareTitle}}"/>
-<meta property="og:description" content="{{shareText}}" name="description"/>
-<meta property="og:image" content="{{imgURL}}"/>
-<meta property="og:image:height" content="{{imgHeight}}"/>
-<meta property="og:image:width" content="{{imgWidth}}"/>
+<meta property="og:url" content="http://interactives.dallasnews.com/2016/concussions/part3.html" />
+<meta property="og:title" content="Solving the unsolvable"/>
+<meta property="og:description" content="With help from Roger Staubach and other Hall of Famers, helmet manufacturers skeek innovations to reduce the risk of concussions" name="description"/>
+<meta property="og:image" content="http://interactives.dallasnews.com/2016/concussions/_share2.jpg"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:width" content="1200"/>
 <meta property="og:type" content="article" />
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@{{sectionTwitter}}" />
-<meta name="twitter:creator" content="@{{authorTwitter}}" />
+<meta name="twitter:site" content="@sportsdayhs" />
+<meta name="twitter:creator" content="@DMNGregRiddle" />
 
-<meta name="liveFyreID" content="{{id}}" />
+<meta name="liveFyreID" content="43776174025" />
 
-<meta name="parsely-page" id='parsely-page' content='{"title": "{{shareTitle}}", "link": "{{url}}", "image_url": "{{imgURL}}", "type": "post", "post_id": "{{id}}", "pub_date": "{{publishDate}}", "section": "{{section}}", "author": ["{{authors}}"], "tags": ["{{keywords|join('","')|safe}}"]}' />
+<meta name="parsely-page" id='parsely-page' content='{"title": "Solving the unsolvable", "link": "http://interactives.dallasnews.com/2016/concussions/part3.html", "image_url": "http://interactives.dallasnews.com/2016/concussions/_share2.jpg", "type": "post", "post_id": "43776174025", "pub_date": "2016-9-30T9:00:00Z", "section": "high-school", "author": ["matt wixon"], "tags": ["interactives","dallas","dallas news","dfw news","dallas newspaper","dallas morning news","dallas morning news newspaper","high school football","football","concussions","helmets","Roger Staubach","X2E Varsity helmet","Xenith"]}' />
 
-<meta property="og:keywords" content="{{keywords|join(',')}}"/>
+<meta property="og:keywords" content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper,high school football,football,concussions,helmets,Roger Staubach,X2E Varsity helmet,Xenith"/>
 
-<meta name="news_keywords" content="{{keywords|join(',')}}"/>
+<meta name="news_keywords" content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper,high school football,football,concussions,helmets,Roger Staubach,X2E Varsity helmet,Xenith"/>
 {%endblock%}
 
 
@@ -50,17 +50,17 @@ var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFP
 adSlot0.setTargeting("position", "x01");
 adSlot0.addService(googletag.pubads());
 
-/*
+
 var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle");
 adSlot1.setTargeting("position", "x02");
 adSlot1.addService(googletag.pubads());
-*/
 
-/*
+
+
 var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom");
 adSlot2.setTargeting("position", "x03");
 adSlot2.addService(googletag.pubads());
-*/
+
 }
 else
 {
@@ -70,17 +70,17 @@ var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFP
 adSlot0.setTargeting("position", "Top");
 adSlot0.addService(googletag.pubads());
 
-/*
+
 var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle");
 adSlot1.setTargeting("position", "Top");
 adSlot1.addService(googletag.pubads());
-*/
 
-/*
+
+
 var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom");
 adSlot2.setTargeting("position", "Top");
 adSlot2.addService(googletag.pubads());
-*/
+
  }
 </script>
 <script type="text/javascript">
@@ -129,7 +129,6 @@ googletag.enableServices();
             <img class="main-img" src="images/_part4.jpg" alt="Roger Staubach's helmets from high school, college, and the NFL">
             <p class="cutline left">Former Dallas Cowboys quarterback Roger Staubach's helmets from high school, college, and the NFL, as seen in his Dallas home.</p>
 
-            <!-- <h3>Label, if needed</h3> -->
 
     		<h1>Solving the unsolvable</h1>
     		<h2>Helmet manufacturers, with help from Roger Staubach and other Hall of Famers, are trying to find new innovations to reduce the risk of concussions</h2>
@@ -147,6 +146,8 @@ googletag.enableServices();
     		<ul id="share-bar1" class="width-auto-hack"></ul>
     	</div>
     	<!-- end shareComments -->
+
+        {%include "adblock1.html" %}
 
         <p class="intro"><span class="dropcap">T</span>ucked away amid the grandeur of Roger Staubach’s North Dallas home is a workout room that is a quasi museum.</p>
 
@@ -262,6 +263,8 @@ googletag.enableServices();
 
         <p>The concept of position-specific helmets has the support of Dr. Robert Cantu, clinical professor of neurosurgery at Boston University School of Medicine.</p>
 
+        {%include "adblock2.html" %}
+
         <p>“The positions where you’re taking hits on every play or very frequently in the line would be a different kind of a helmet — likely a much bigger, heavier one — than something that would be on a wide receiver, whose helmet would be more like a crash helmet,” Cantu said.</p>
 
         <p>Buying helmets that received the highest mark in the Virginia Tech Ratings can get expensive, but it doesn’t have to. There are five-star helmets that sell for $550 and $499, but Schutt’s highest-rated five-star helmet (the Air XP Pro VTD II) sells for $234. Xenith’s five-star Epic helmet sells for $299.99. Riddell has team prices that greatly reduce the costs of its top helmets.</p>
@@ -304,7 +307,7 @@ googletag.enableServices();
         <p>“The helmet we have today will probably not be the helmet that we have in five years. As a scientific community, as we learn more about concussions, there is going to be an opportunity to evolve helmet technology.”</p>
 
 
-        {%include "adblock1.html" %}
+        {%include "adblock3.html" %}
 
     </div> <!-- end part div -->
 
