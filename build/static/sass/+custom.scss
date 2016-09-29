@@ -295,7 +295,7 @@ STORY CONTENT
     .number-text {
         padding-left: 2rem;
         position: relative;
-        min-height: 110px;y
+        min-height: 110px;
 
         @media only screen and (max-width: 678px) {
             min-height: inherit;
@@ -364,10 +364,10 @@ BOTTOM NAV
     }
 
     h1 {
-        @include headline("Kanit", 100, 3rem, white, auto);
+        @include headline("Kanit", 100, 2.6rem, white, auto);
         font-style: italic;
         text-align: center;
-        line-height: 3.6rem;
+        line-height: 3.2rem;
         margin-bottom: 0;
         padding: 0 0.5rem;
     }

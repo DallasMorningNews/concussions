@@ -2091,12 +2091,12 @@ BOTTOM NAV
   .bottom-nav h1 {
     font-family: "Kanit";
     font-weight: 100;
-    font-size: 3rem;
+    font-size: 2.6rem;
     color: white;
     text-transform: auto;
     font-style: italic;
     text-align: center;
-    line-height: 3.6rem;
+    line-height: 3.2rem;
     margin-bottom: 0;
     padding: 0 0.5rem; }
   .bottom-nav h2 {
