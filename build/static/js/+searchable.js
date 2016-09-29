@@ -86,6 +86,7 @@ TDMN = {};
     });
 
     TDMN.schoolsCollection.reset(data.schools);
+    schoolSearchView.select(1);
   });
 
 

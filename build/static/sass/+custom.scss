@@ -172,6 +172,15 @@ HEADER AND DECK
 STORY CONTENT
 **************/
 
+
+.refer {
+	@include headline("Kanit", 600, auto, $primary, auto);
+	margin: 0 auto;
+	max-width: 650px;
+	margin-bottom: 2rem;
+}
+
+
 .subhead {
 	color: $primary;
 	@include headline("Kanit", 800, auto, $primary, uppercase);
@@ -191,7 +200,7 @@ STORY CONTENT
     padding: 0px;
 
     @media only screen and (max-width: 678px) {
-        height: 500px;
+        height: 350px;
     }
 }
 
@@ -255,6 +264,7 @@ STORY CONTENT
         text-align: center;
         background: $primary;
         padding: 2rem 0;
+		font-weight: 600;
     }
 
     .row {
@@ -285,7 +295,7 @@ STORY CONTENT
     .number-text {
         padding-left: 2rem;
         position: relative;
-        min-height: 110px;
+        min-height: 110px;y
 
         @media only screen and (max-width: 678px) {
             min-height: inherit;

@@ -1625,7 +1625,6 @@ XIX. ADS
   font-family: "Gotham A", "Gotham B", Arial, sans-serif;
   display: block;
   margin: 0 auto;
-  width: 90%;
   max-width: 650px;
   margin: 48px auto;
   padding-top: 20px;
@@ -1638,7 +1637,7 @@ XIX. ADS
     color: #329ce8;
     font-size: 20px;
     line-height: 24px;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center; }
   .graphics p {
     font-size: 15px;
@@ -1692,10 +1691,10 @@ h4 {
   color: #329ce8;
   line-height: 24px;
   text-align: center;
-  letter-spacing: .02rem; }
+  letter-spacing: 0.02rem; }
 
-.helmetGraphic,
-.graphicHed {
+.graphicHed,
+.helmetGraphic {
   width: 100%;
   max-width: 650px;
   margin: 0 auto;
@@ -1925,6 +1924,16 @@ HEADER AND DECK
 /**************
 STORY CONTENT
 **************/
+.refer {
+  font-family: "Kanit";
+  font-weight: 600;
+  font-size: auto;
+  color: #329ce8;
+  text-transform: auto;
+  margin: 0 auto;
+  max-width: 650px;
+  margin-bottom: 2rem; }
+
 .subhead {
   color: #329ce8;
   font-family: "Kanit";
@@ -1947,7 +1956,7 @@ STORY CONTENT
   padding: 0px; }
   @media only screen and (max-width: 678px) {
     .quote-wrapper1 {
-      height: 500px; } }
+      height: 350px; } }
 
 .quote-wrapper2 {
   position: absolute;
@@ -2000,7 +2009,8 @@ STORY CONTENT
     font-weight: 700;
     text-align: center;
     background: #329ce8;
-    padding: 2rem 0; }
+    padding: 2rem 0;
+    font-weight: 600; }
   .fact-box .row {
     margin: 2rem 0; }
   .fact-box .number {
