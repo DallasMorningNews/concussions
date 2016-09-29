@@ -1,0 +1,115 @@
+@import 'mixins';
+@import 'variables';
+.graphic-wrapper {
+    margin: 48px auto;
+    width: 100%;
+    max-width: 650px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+h4 {
+    @include headline("Kanit", 600, 2rem, $primary, normal);
+    color: $primary;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.02rem;
+}
+.graphicHed,
+.helmetGraphic {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+}
+.helmetGraphic * {
+    position: absolute;
+    z-index: 2;
+}
+.helmetGraphic {
+    height: 500px;
+    margin-bottom: 20px;
+}
+.helmetGraphic img {
+    width: 600px;
+    padding-left: 10%;
+    padding-top: 5%;
+    z-index: 1;
+}
+.graphicSource {
+    bottom: 0;
+    left: 0;
+}
+#calloutOne {
+    width: 250px;
+    top: 32px;
+    left: 30px;
+}
+#calloutTwo {
+    width: 180px;
+    top: 61px;
+    left: 410px;
+    padding: 5px;
+    background-color: white;
+}
+#calloutThree {
+    width: 320px;
+    top: 436px;
+    left: 220px;
+}
+@media (max-width: 660px) {
+    .helmetGraphic {
+        height: 460px;
+    }
+    .helmetGraphic img {
+        width: 550px;
+        margin-left: -30px;
+    }
+    #calloutOne {
+        top: 22px;
+        left: 20px;
+    }
+    #calloutTwo {
+        width: 120px;
+        top: 14px;
+        left: 300px;
+    }
+    #calloutThree {
+        width: 320px;
+        top: 400px;
+        left: 140px;
+    }
+}
+@media (max-width: 530px) {
+    .helmetGraphic {
+        height: 410px;
+        max-width: 280px;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        margin-bottom: 20px;
+    }
+    .graphicHed {
+        max-width: 280px;
+        font-size: 2rem;
+    }
+    .helmetGraphic img {
+        width: 350px;
+        margin-left: -45px;
+        padding-top: 30%;
+    }
+    #calloutOne {
+        top: 12px;
+        left: 10px;
+        width: 120px;
+    }
+    #calloutTwo {
+        width: 120px;
+        top: 59px;
+        left: 156px;
+    }
+    #calloutThree {
+        width: 246px;
+        top: 332px;
+        left: 20px;
+    }
+}

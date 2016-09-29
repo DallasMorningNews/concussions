@@ -5,6 +5,13 @@
 	margin-bottom: $margin;
 }
 
+@mixin headline($font, $weight, $size, $color, $transform) {
+  font-family: $font;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  text-transform: $transform;
+}
 
 //before and after element setup
 @mixin psuedoElement($width, $height, $position: relative, $content: '') {
