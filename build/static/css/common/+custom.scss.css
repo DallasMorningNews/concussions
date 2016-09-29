@@ -1093,7 +1093,6 @@ STORY CONTENT
     .fact-box {
       border-top: none; } }
   .fact-box h4 {
-    color: white;
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
@@ -1141,6 +1140,14 @@ STORY CONTENT
         position: relative;
         top: inherit;
         transform: none; } }
+
+.vicis {
+  max-width: 500px !important;
+  display: block !important;
+  margin: 0 auto !important; }
+
+p.graphic-subhead {
+  font-weight: bold; }
 
 /**************
 BOTTOM NAV

@@ -257,7 +257,6 @@ STORY CONTENT
     }
 
     h4 {
-        color: white;
         font-size: 20px;
         line-height: 24px;
         font-weight: 700;
@@ -315,6 +314,16 @@ STORY CONTENT
         }
     }
 
+}
+
+.vicis {
+	max-width: 500px !important;
+	display: block !important;
+	margin: 0 auto !important;
+}
+
+p.graphic-subhead {
+	font-weight: bold;
 }
 
 /**************
