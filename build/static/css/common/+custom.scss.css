@@ -1093,13 +1093,17 @@ STORY CONTENT
     .fact-box {
       border-top: none; } }
   .fact-box h4 {
-    font-size: 20px;
+    font-family: "Kanit";
+    font-weight: 600;
+    font-size: 2rem;
+    color: white;
+    text-transform: auto;
     line-height: 24px;
     font-weight: 700;
+    letter-spacing: 0.1rem;
     text-align: center;
     background: #329ce8;
-    padding: 2rem 0;
-    font-weight: 600; }
+    padding: 2rem 0; }
   .fact-box .row {
     margin: 2rem 0; }
   .fact-box .number {
